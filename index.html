@@ -579,6 +579,444 @@ h1 {
   .nav-btn { font-size: 11px; }
   .header-metric { padding: 9px; }
 }
+
+/* 参考 /Users/apple/Desktop/法考/index.html 的移动端学习进度排版 */
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --panel-soft: #f1f5f9;
+  --text: #1e293b;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --primary: #0f766e;
+  --primary-2: #14b8a6;
+  --accent: #ca8a04;
+  --accent-2: #2563eb;
+  --danger: #ef4444;
+  --success: #10b981;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+  --radius: 12px;
+  --theme-gradient: linear-gradient(135deg, #0f766e 0%, #2563eb 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  padding-bottom: 80px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+.app-shell {
+  width: 100%;
+  max-width: none;
+  padding: 0 0 84px;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0;
+  padding: 20px 16px 16px;
+  background: var(--theme-gradient);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.header-top {
+  align-items: flex-start;
+  gap: 12px;
+}
+.eyebrow {
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.subtitle {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: 0.82;
+}
+.countdown {
+  flex: 0 0 132px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 12px;
+}
+.countdown-label,
+.countdown-unit {
+  font-size: 11px;
+  opacity: 0.85;
+}
+.countdown-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+.progress-summary {
+  margin-top: 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  padding: 10px 12px;
+}
+.progress-row {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.92;
+}
+.progress-track {
+  height: 6px;
+  background: rgba(255,255,255,0.25);
+}
+.progress-fill {
+  background: #fff;
+  transition: width 0.5s ease;
+}
+.header-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+.header-metric {
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  padding: 8px 10px;
+}
+.header-metric-label {
+  font-size: 11px;
+  opacity: 0.82;
+}
+.header-metric-value {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.page {
+  padding: 12px 12px 0;
+}
+.page.active {
+  padding-bottom: 0;
+}
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.section-note {
+  font-size: 11px;
+  font-weight: 500;
+}
+.subject-grid,
+.plan-grid,
+.timeline {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.subject-card,
+.metric-card,
+.panel,
+.video-item,
+.timeline-step {
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.subject-card,
+.metric-card,
+.panel,
+.timeline-step {
+  padding: 14px;
+}
+.subject-head {
+  margin-bottom: 10px;
+}
+.subject-name {
+  padding-right: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.subject-pct {
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+.subject-stats {
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+.mini-track,
+.rank-track {
+  height: 5px;
+  background: #f1f5f9;
+}
+.mini-fill,
+.rank-fill,
+.chart-fill {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+}
+.metric-card {
+  min-height: 74px;
+  padding: 12px;
+}
+.metric-label {
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.metric-value,
+.plan-lead {
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+.metric-sub,
+.plan-text,
+.timeline-body {
+  font-size: 11px;
+}
+.panel {
+  margin-bottom: 10px;
+}
+.timeline-step {
+  border-left: 3px solid var(--primary);
+}
+.timeline-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+.rank-row {
+  padding: 8px 0;
+}
+.rank-name,
+.rank-value {
+  font-size: 12px;
+  font-weight: 600;
+}
+.study-chart {
+  height: 170px;
+}
+.filter-bar {
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 2px 0 2px;
+}
+.filter-btn,
+.utility-btn,
+.import-label {
+  min-height: auto;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--panel);
+  color: var(--muted);
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.filter-btn.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+.search-wrap {
+  margin-bottom: 10px;
+}
+.search-wrap::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: var(--muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+.search-input {
+  height: auto;
+  border-radius: 99px;
+  padding: 9px 12px 9px 36px;
+  font-size: 13px;
+}
+.video-list {
+  display: block;
+}
+.video-item {
+  display: flex;
+  min-height: 0;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.video-item:hover {
+  transform: none;
+  border-color: transparent;
+}
+.video-item:active {
+  transform: scale(0.98);
+}
+.video-item.done {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+.video-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  color: #fff;
+}
+.video-item.done .video-check {
+  background: var(--success);
+  border-color: var(--success);
+}
+.video-info {
+  flex: 1;
+}
+.video-episode {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-all;
+}
+.video-item.done .video-episode {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: #86efac;
+}
+.video-meta {
+  margin-top: 3px;
+  gap: 8px;
+}
+.tag {
+  min-height: auto;
+  border-radius: 99px;
+  background: #f1f5f9;
+  color: var(--primary);
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.tag.time {
+  background: transparent;
+  color: var(--muted);
+  padding: 0;
+}
+.tag.time::before {
+  content: "⏱ ";
+}
+.empty {
+  border: 0;
+  background: transparent;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+.utilities {
+  margin-top: 10px;
+}
+.bottom-nav {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: none;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--panel);
+  box-shadow: none;
+  padding: 8px 0 env(safe-area-inset-bottom, 8px);
+}
+.nav-btn {
+  flex: 1;
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  border-radius: 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+.nav-btn::before {
+  font-size: 20px;
+  line-height: 1;
+  filter: grayscale(1);
+}
+#nav-progress::before { content: "✅"; }
+#nav-stats::before { content: "📈"; }
+#nav-plan::before { content: "📅"; }
+#nav-todo::before { content: "📋"; }
+#nav-all::before { content: "🎬"; }
+.nav-btn.active {
+  background: transparent;
+  color: var(--primary);
+}
+.nav-btn.active::before {
+  filter: grayscale(0);
+}
+.toast {
+  bottom: 90px;
+  border-radius: 99px;
+}
+@media (max-width: 760px) {
+  .app-shell { padding: 0 0 84px; }
+  .header-top {
+    flex-direction: column;
+  }
+  .countdown {
+    width: 100%;
+    flex-basis: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+  }
+  .header-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 860px) {
+  .app-shell {
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px var(--line);
+  }
+}
 </style>
 </head>
 <body>
@@ -588,7 +1026,7 @@ h1 {
       <div class="title-block">
         <div class="eyebrow">CIIA Paper II</div>
         <h1>CIIA 卷二学习进度</h1>
-        <div class="subtitle">数据来自 CIIA视频课.xlsx 的卷二工作表。生成时间：2026-06-29T23:48:17</div>
+        <div class="subtitle">数据来自 苹果版/卷二、卷二真题及非重复 .mp4 更新时长清单。更新：2026-08-20</div>
       </div>
       <div class="countdown" aria-label="考试倒计时">
         <div>
@@ -607,7 +1045,7 @@ h1 {
     </div>
     <div class="header-metrics">
       <div class="header-metric">
-        <div class="header-metric-label">章节</div>
+        <div class="header-metric-label">视频</div>
         <div class="header-metric-value" id="episodeMetric">0 / 0</div>
       </div>
       <div class="header-metric">
@@ -653,15 +1091,15 @@ h1 {
   </section>
 
   <section class="page" id="page-todo">
-    <div class="section-title">待看章节 <span class="section-note" id="todoNote"></span></div>
+    <div class="section-title">待看视频 <span class="section-note" id="todoNote"></span></div>
     <div class="filter-bar" id="todoFilters"></div>
     <div class="video-list" id="todoList"></div>
   </section>
 
   <section class="page" id="page-all">
-    <div class="section-title">全部章节 <span class="section-note" id="allNote"></span></div>
+    <div class="section-title">全部视频 <span class="section-note" id="allNote"></span></div>
     <div class="search-wrap">
-      <input class="search-input" id="searchInput" type="search" placeholder="搜索课程或章节" oninput="renderAll()">
+      <input class="search-input" id="searchInput" type="search" placeholder="搜索课程、真题或文件名" oninput="renderAll()">
     </div>
     <div class="filter-bar" id="allFilters"></div>
     <div class="video-list" id="allList"></div>
@@ -685,7 +1123,4560 @@ h1 {
 <div class="toast" id="toast"></div>
 
 <script>
-const DATA_CIIA_JUAN2 = {"examDate":"2026-09-19","dailyFallbackMinutes":120,"subjects":[{"name":"固收","short":"固收","total":12,"done":0,"totalMin":330,"doneMin":0},{"name":"衍生品","short":"衍生品","total":14,"done":0,"totalMin":390,"doneMin":0},{"name":"组合","short":"组合","total":23,"done":0,"totalMin":587,"doneMin":0},{"name":"真题","short":"真题","total":17,"done":0,"totalMin":1945,"doneMin":0}],"videos":[{"id":0,"subject":"固收","episode":"01. 固收表格题","chapter":"固收表格题","duration":"30分钟","durationMin":30,"done":false,"sourceRow":2},{"id":1,"subject":"固收","episode":"02. 久期与凸性","chapter":"久期与凸性","duration":"50分钟","durationMin":50,"done":false,"sourceRow":3},{"id":2,"subject":"固收","episode":"03. 持有期收益率","chapter":"持有期收益率","duration":"20分钟","durationMin":20,"done":false,"sourceRow":4},{"id":3,"subject":"固收","episode":"04. 杠铃子弹组合","chapter":"杠铃子弹组合","duration":"15分钟","durationMin":15,"done":false,"sourceRow":5},{"id":4,"subject":"固收","episode":"05. 债券期权组合","chapter":"债券期权组合","duration":"20分钟","durationMin":20,"done":false,"sourceRow":6},{"id":5,"subject":"固收","episode":"06. 期权调整利差","chapter":"期权调整利差","duration":"20分钟","durationMin":20,"done":false,"sourceRow":7},{"id":6,"subject":"固收","episode":"07. 通胀联结债券","chapter":"通胀联结债券","duration":"40分钟","durationMin":40,"done":false,"sourceRow":8},{"id":7,"subject":"固收","episode":"08. 信用风险","chapter":"信用风险","duration":"40分钟","durationMin":40,"done":false,"sourceRow":9},{"id":8,"subject":"固收","episode":"09. 各种利率","chapter":"各种利率","duration":"30分钟","durationMin":30,"done":false,"sourceRow":10},{"id":9,"subject":"固收","episode":"10. 实战","chapter":"实战","duration":"25分钟","durationMin":25,"done":false,"sourceRow":11},{"id":10,"subject":"固收","episode":"11. 考生问题点","chapter":"考生问题点","duration":"10分钟","durationMin":10,"done":false,"sourceRow":12},{"id":11,"subject":"固收","episode":"12. 资产证券化","chapter":"资产证券化","duration":"30分钟","durationMin":30,"done":false,"sourceRow":13},{"id":12,"subject":"衍生品","episode":"01. 知识点","chapter":"知识点","duration":"30分钟","durationMin":30,"done":false,"sourceRow":14},{"id":13,"subject":"衍生品","episode":"02. CDS","chapter":"CDS","duration":"50分钟","durationMin":50,"done":false,"sourceRow":15},{"id":14,"subject":"衍生品","episode":"03. 互换","chapter":"互换","duration":"25分钟","durationMin":25,"done":false,"sourceRow":16},{"id":15,"subject":"衍生品","episode":"04. 期权定价公式","chapter":"期权定价公式","duration":"40分钟","durationMin":40,"done":false,"sourceRow":17},{"id":16,"subject":"衍生品","episode":"05. 平价公式","chapter":"平价公式","duration":"20分钟","durationMin":20,"done":false,"sourceRow":18},{"id":17,"subject":"衍生品","episode":"06. 画图题","chapter":"画图题","duration":"25分钟","durationMin":25,"done":false,"sourceRow":19},{"id":18,"subject":"衍生品","episode":"07. 期权期货策略","chapter":"期权期货策略","duration":"15分钟","durationMin":15,"done":false,"sourceRow":20},{"id":19,"subject":"衍生品","episode":"08. 汇率题","chapter":"汇率题","duration":"35分钟","durationMin":35,"done":false,"sourceRow":21},{"id":20,"subject":"衍生品","episode":"09. 期权策略","chapter":"期权策略","duration":"25分钟","durationMin":25,"done":false,"sourceRow":22},{"id":21,"subject":"衍生品","episode":"10. 期权上下限及套利","chapter":"期权上下限及套利","duration":"35分钟","durationMin":35,"done":false,"sourceRow":23},{"id":22,"subject":"衍生品","episode":"11. 其他知识","chapter":"其他知识","duration":"10分钟","durationMin":10,"done":false,"sourceRow":24},{"id":23,"subject":"衍生品","episode":"12. 衍生品期货的套利","chapter":"衍生品期货的套利","duration":"10分钟","durationMin":10,"done":false,"sourceRow":25},{"id":24,"subject":"衍生品","episode":"13. 衍生品二叉树定价","chapter":"衍生品二叉树定价","duration":"1小时","durationMin":60,"done":false,"sourceRow":26},{"id":25,"subject":"衍生品","episode":"14. 衍生品希腊字母补充","chapter":"衍生品希腊字母补充","duration":"10分钟","durationMin":10,"done":false,"sourceRow":27},{"id":26,"subject":"组合","episode":"01. 组合导学","chapter":"组合导学","duration":"3分钟","durationMin":3,"done":false,"sourceRow":28},{"id":27,"subject":"组合","episode":"02. 组合与固收","chapter":"组合与固收","duration":"5分钟","durationMin":5,"done":false,"sourceRow":29},{"id":28,"subject":"组合","episode":"03. 组合与衍生品","chapter":"组合与衍生品","duration":"40分钟","durationMin":40,"done":false,"sourceRow":30},{"id":29,"subject":"组合","episode":"04. 套期保值策略","chapter":"套期保值策略","duration":"20分钟","durationMin":20,"done":false,"sourceRow":31},{"id":30,"subject":"组合","episode":"05. 静态保险策略","chapter":"静态保险策略","duration":"50分钟","durationMin":50,"done":false,"sourceRow":32},{"id":31,"subject":"组合","episode":"06. 动态保险策略","chapter":"动态保险策略","duration":"35分钟","durationMin":35,"done":false,"sourceRow":33},{"id":32,"subject":"组合","episode":"07. 使用期货进行套期保值","chapter":"使用期货进行套期保值","duration":"30分钟","durationMin":30,"done":false,"sourceRow":34},{"id":33,"subject":"组合","episode":"08. 保护性看跌期权","chapter":"保护性看跌期权","duration":"10分钟","durationMin":10,"done":false,"sourceRow":35},{"id":34,"subject":"组合","episode":"09. 统计指标","chapter":"统计指标","duration":"10分钟","durationMin":10,"done":false,"sourceRow":36},{"id":35,"subject":"组合","episode":"10. 盈余汇报","chapter":"盈余汇报","duration":"10分钟","durationMin":10,"done":false,"sourceRow":37},{"id":36,"subject":"组合","episode":"11. CPPI策略","chapter":"CPPI策略","duration":"30分钟","durationMin":30,"done":false,"sourceRow":38},{"id":37,"subject":"组合","episode":"12. TWR与MWR","chapter":"TWR与MWR","duration":"35分钟","durationMin":35,"done":false,"sourceRow":39},{"id":38,"subject":"组合","episode":"13. 有效边界","chapter":"有效边界","duration":"1小时30分钟","durationMin":90,"done":false,"sourceRow":40},{"id":39,"subject":"组合","episode":"14. 各种比率","chapter":"各种比率","duration":"3分钟","durationMin":3,"done":false,"sourceRow":41},{"id":40,"subject":"组合","episode":"15. 有效市场","chapter":"有效市场","duration":"3分钟","durationMin":3,"done":false,"sourceRow":42},{"id":41,"subject":"组合","episode":"16. 追踪误差与信息比率","chapter":"追踪误差与信息比率","duration":"1小时","durationMin":60,"done":false,"sourceRow":43},{"id":42,"subject":"组合","episode":"17. 单指数APT","chapter":"单指数APT","duration":"30分钟","durationMin":30,"done":false,"sourceRow":44},{"id":43,"subject":"组合","episode":"18. 迪茨近似法","chapter":"迪茨近似法","duration":"25分钟","durationMin":25,"done":false,"sourceRow":45},{"id":44,"subject":"组合","episode":"19. VAR","chapter":"VAR","duration":"13分钟","durationMin":13,"done":false,"sourceRow":46},{"id":45,"subject":"组合","episode":"20. 补充知识","chapter":"补充知识","duration":"40分钟","durationMin":40,"done":false,"sourceRow":47},{"id":46,"subject":"组合","episode":"21. 其他知识","chapter":"其他知识","duration":"5分钟","durationMin":5,"done":false,"sourceRow":48},{"id":47,"subject":"组合","episode":"22. 组合拓展","chapter":"组合拓展","duration":"10分钟","durationMin":10,"done":false,"sourceRow":49},{"id":48,"subject":"组合","episode":"23. 养老金ALM","chapter":"养老金ALM","duration":"30分钟","durationMin":30,"done":false,"sourceRow":50},{"id":49,"subject":"真题","episode":"01. 真题视频前导","chapter":"真题视频前导","duration":"1小时30分钟","durationMin":90,"done":false,"sourceRow":51},{"id":50,"subject":"真题","episode":"02. 2021年卷二问题","chapter":"2021年卷二问题","duration":"2小时","durationMin":120,"done":false,"sourceRow":52},{"id":51,"subject":"真题","episode":"03. 2020 年9月","chapter":"2020 年9月","duration":"1小时40分钟","durationMin":100,"done":false,"sourceRow":53},{"id":52,"subject":"真题","episode":"04. 2019年9月真题讲解","chapter":"2019年9月真题讲解","duration":"55分钟","durationMin":55,"done":false,"sourceRow":54},{"id":53,"subject":"真题","episode":"05. 2019年3月真题讲解","chapter":"2019年3月真题讲解","duration":"1小时55分钟","durationMin":115,"done":false,"sourceRow":55},{"id":54,"subject":"真题","episode":"06. 2018年9月真题讲解","chapter":"2018年9月真题讲解","duration":"1小时20分钟","durationMin":80,"done":false,"sourceRow":56},{"id":55,"subject":"真题","episode":"07. 2018年3月真题讲解","chapter":"2018年3月真题讲解","duration":"2小时10分钟","durationMin":130,"done":false,"sourceRow":57},{"id":56,"subject":"真题","episode":"08. 2017年9月真题讲解","chapter":"2017年9月真题讲解","duration":"1小时40分钟","durationMin":100,"done":false,"sourceRow":58},{"id":57,"subject":"真题","episode":"09. 2017年3月真题讲解","chapter":"2017年3月真题讲解","duration":"1小时45分钟","durationMin":105,"done":false,"sourceRow":59},{"id":58,"subject":"真题","episode":"10. 2016年9月真题讲解","chapter":"2016年9月真题讲解","duration":"2小时30分钟","durationMin":150,"done":false,"sourceRow":60},{"id":59,"subject":"真题","episode":"11. 2016年3月真题讲解","chapter":"2016年3月真题讲解","duration":"1小时55分钟","durationMin":115,"done":false,"sourceRow":61},{"id":60,"subject":"真题","episode":"12. 2015年9月真题讲解","chapter":"2015年9月真题讲解","duration":"2小时5分钟","durationMin":125,"done":false,"sourceRow":62},{"id":61,"subject":"真题","episode":"13. 2015年3月真题讲解","chapter":"2015年3月真题讲解","duration":"2小时15分钟","durationMin":135,"done":false,"sourceRow":63},{"id":62,"subject":"真题","episode":"14. 2014年9月真题讲解","chapter":"2014年9月真题讲解","duration":"1小时25分钟","durationMin":85,"done":false,"sourceRow":64},{"id":63,"subject":"真题","episode":"15. 2014年3月真题讲解","chapter":"2014年3月真题讲解","duration":"2小时","durationMin":120,"done":false,"sourceRow":65},{"id":64,"subject":"真题","episode":"16. 2013年9月真题讲解","chapter":"2013年9月真题讲解","duration":"1小时50分钟","durationMin":110,"done":false,"sourceRow":66},{"id":65,"subject":"真题","episode":"17. 2013年3月真题讲解","chapter":"2013年3月真题讲解","duration":"3小时30分钟","durationMin":210,"done":false,"sourceRow":67}],"source":{"workbook":"/Users/apple/Desktop/CIIA视频课.xlsx","sheet":"卷二","generatedAt":"2026-06-29T23:48:17"}};
+const DATA_CIIA_JUAN2 = {
+  "examDate": "2026-09-19",
+  "dailyFallbackMinutes": 120,
+  "planOrderDescription": "先完成卷二课程（固收、衍生品、组合），再完成卷二真题；真题按年份月份由新到旧排列，非重复的 2024年9月卷二 mp4 更新已纳入。",
+  "subjects": [
+    {
+      "name": "固收",
+      "short": "固收",
+      "total": 33,
+      "done": 0,
+      "totalMin": 487.39,
+      "doneMin": 0
+    },
+    {
+      "name": "衍生品",
+      "short": "衍生品",
+      "total": 34,
+      "done": 0,
+      "totalMin": 604.21,
+      "doneMin": 0
+    },
+    {
+      "name": "组合",
+      "short": "组合",
+      "total": 43,
+      "done": 0,
+      "totalMin": 726.39,
+      "doneMin": 0
+    },
+    {
+      "name": "真题",
+      "short": "真题",
+      "total": 205,
+      "done": 0,
+      "totalMin": 2176.81,
+      "doneMin": 0
+    }
+  ],
+  "videos": [
+    {
+      "id": 0,
+      "subject": "固收",
+      "episode": "001. 0-1-固收基础班-1",
+      "chapter": "0-1-固收基础班-1",
+      "duration": "16.93分钟",
+      "durationMin": 16.93,
+      "durationSec": 1015.56,
+      "done": false,
+      "planOrder": 0,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/0-1-固收基础班-1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 1,
+      "subject": "固收",
+      "episode": "002. 0-2-固收基础班-2",
+      "chapter": "0-2-固收基础班-2",
+      "duration": "11.16分钟",
+      "durationMin": 11.16,
+      "durationSec": 669.36,
+      "done": false,
+      "planOrder": 1,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/0-2-固收基础班-2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 2,
+      "subject": "固收",
+      "episode": "003. 0-3-固收基础班-3",
+      "chapter": "0-3-固收基础班-3",
+      "duration": "12.76分钟",
+      "durationMin": 12.76,
+      "durationSec": 765.41,
+      "done": false,
+      "planOrder": 2,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/0-3-固收基础班-3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 3,
+      "subject": "固收",
+      "episode": "004. 0-4-固收基础班-4",
+      "chapter": "0-4-固收基础班-4",
+      "duration": "33.68分钟",
+      "durationMin": 33.68,
+      "durationSec": 2021.01,
+      "done": false,
+      "planOrder": 3,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/0-4-固收基础班-4.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 4,
+      "subject": "固收",
+      "episode": "005. 0-5-固收基础班-5",
+      "chapter": "0-5-固收基础班-5",
+      "duration": "8.15分钟",
+      "durationMin": 8.15,
+      "durationSec": 488.75,
+      "done": false,
+      "planOrder": 4,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/0-5-固收基础班-5.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 5,
+      "subject": "固收",
+      "episode": "006. 固收1-固收表格题1",
+      "chapter": "固收1-固收表格题1",
+      "duration": "16.77分钟",
+      "durationMin": 16.77,
+      "durationSec": 1006.08,
+      "done": false,
+      "planOrder": 5,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收1-固收表格题1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 6,
+      "subject": "固收",
+      "episode": "007. 固收2-固收表格题2",
+      "chapter": "固收2-固收表格题2",
+      "duration": "8.16分钟",
+      "durationMin": 8.16,
+      "durationSec": 489.34,
+      "done": false,
+      "planOrder": 6,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收2-固收表格题2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 7,
+      "subject": "固收",
+      "episode": "008. 固收3-久期与凸性1",
+      "chapter": "固收3-久期与凸性1",
+      "duration": "11.92分钟",
+      "durationMin": 11.92,
+      "durationSec": 715.44,
+      "done": false,
+      "planOrder": 7,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收3-久期与凸性1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 8,
+      "subject": "固收",
+      "episode": "009. 固收4-久期与凸性2",
+      "chapter": "固收4-久期与凸性2",
+      "duration": "3.44分钟",
+      "durationMin": 3.44,
+      "durationSec": 206.32,
+      "done": false,
+      "planOrder": 8,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收4-久期与凸性2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 9,
+      "subject": "固收",
+      "episode": "010. 固收5-久期与凸性3",
+      "chapter": "固收5-久期与凸性3",
+      "duration": "8.47分钟",
+      "durationMin": 8.47,
+      "durationSec": 508.12,
+      "done": false,
+      "planOrder": 9,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收5-久期与凸性3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 10,
+      "subject": "固收",
+      "episode": "011. 固收6-1久期性质补充",
+      "chapter": "固收6-1久期性质补充",
+      "duration": "15.29分钟",
+      "durationMin": 15.29,
+      "durationSec": 917.44,
+      "done": false,
+      "planOrder": 10,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收6-1久期性质补充.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 11,
+      "subject": "固收",
+      "episode": "012. 固收6-久期与凸性4",
+      "chapter": "固收6-久期与凸性4",
+      "duration": "12.78分钟",
+      "durationMin": 12.78,
+      "durationSec": 767.08,
+      "done": false,
+      "planOrder": 11,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收6-久期与凸性4.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 12,
+      "subject": "固收",
+      "episode": "013. 固收7-持有期收益率",
+      "chapter": "固收7-持有期收益率",
+      "duration": "6.67分钟",
+      "durationMin": 6.67,
+      "durationSec": 400.26,
+      "done": false,
+      "planOrder": 12,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收7-持有期收益率.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 13,
+      "subject": "固收",
+      "episode": "014. 固收8-收益率曲线",
+      "chapter": "固收8-收益率曲线",
+      "duration": "12.19分钟",
+      "durationMin": 12.19,
+      "durationSec": 731.5,
+      "done": false,
+      "planOrder": 13,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收8-收益率曲线.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 14,
+      "subject": "固收",
+      "episode": "015. 固收9-杠铃子弹组合1",
+      "chapter": "固收9-杠铃子弹组合1",
+      "duration": "13.74分钟",
+      "durationMin": 13.74,
+      "durationSec": 824.21,
+      "done": false,
+      "planOrder": 14,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收9-杠铃子弹组合1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 15,
+      "subject": "固收",
+      "episode": "016. 固收10-债券期权结合",
+      "chapter": "固收10-债券期权结合",
+      "duration": "20.26分钟",
+      "durationMin": 20.26,
+      "durationSec": 1215.51,
+      "done": false,
+      "planOrder": 15,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收10-债券期权结合.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 16,
+      "subject": "固收",
+      "episode": "017. 固收11-期权调整利差",
+      "chapter": "固收11-期权调整利差",
+      "duration": "19.90分钟",
+      "durationMin": 19.9,
+      "durationSec": 1193.75,
+      "done": false,
+      "planOrder": 16,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收11-期权调整利差.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 17,
+      "subject": "固收",
+      "episode": "018. 固收12-通胀联结债券1",
+      "chapter": "固收12-通胀联结债券1",
+      "duration": "13.34分钟",
+      "durationMin": 13.34,
+      "durationSec": 800.19,
+      "done": false,
+      "planOrder": 17,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收12-通胀联结债券1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 18,
+      "subject": "固收",
+      "episode": "019. 固收13-通胀联结债券2",
+      "chapter": "固收13-通胀联结债券2",
+      "duration": "17.11分钟",
+      "durationMin": 17.11,
+      "durationSec": 1026.43,
+      "done": false,
+      "planOrder": 18,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收13-通胀联结债券2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 19,
+      "subject": "固收",
+      "episode": "020. 固收14-通胀联结债券3",
+      "chapter": "固收14-通胀联结债券3",
+      "duration": "6.26分钟",
+      "durationMin": 6.26,
+      "durationSec": 375.66,
+      "done": false,
+      "planOrder": 19,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收14-通胀联结债券3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 20,
+      "subject": "固收",
+      "episode": "021. 固收15-信用风险1",
+      "chapter": "固收15-信用风险1",
+      "duration": "9.91分钟",
+      "durationMin": 9.91,
+      "durationSec": 594.35,
+      "done": false,
+      "planOrder": 20,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收15-信用风险1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 21,
+      "subject": "固收",
+      "episode": "022. 固收16-信用风险2",
+      "chapter": "固收16-信用风险2",
+      "duration": "25.93分钟",
+      "durationMin": 25.93,
+      "durationSec": 1555.8,
+      "done": false,
+      "planOrder": 21,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收16-信用风险2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 22,
+      "subject": "固收",
+      "episode": "023. 固收17-各种利率",
+      "chapter": "固收17-各种利率",
+      "duration": "29.86分钟",
+      "durationMin": 29.86,
+      "durationSec": 1791.4,
+      "done": false,
+      "planOrder": 22,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收17-各种利率.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 23,
+      "subject": "固收",
+      "episode": "024. 固收18-实战（里面应该是0.75%打错了）",
+      "chapter": "固收18-实战（里面应该是0.75%打错了）",
+      "duration": "6.67分钟",
+      "durationMin": 6.67,
+      "durationSec": 400.28,
+      "done": false,
+      "planOrder": 23,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收18-实战（里面应该是0.75%打错了）.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 24,
+      "subject": "固收",
+      "episode": "025. 固收19-固收真题实战",
+      "chapter": "固收19-固收真题实战",
+      "duration": "16.22分钟",
+      "durationMin": 16.22,
+      "durationSec": 973.44,
+      "done": false,
+      "planOrder": 24,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收19-固收真题实战.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 25,
+      "subject": "固收",
+      "episode": "026. 固收20-固收久期公式考生题问点",
+      "chapter": "固收20-固收久期公式考生题问点",
+      "duration": "6.82分钟",
+      "durationMin": 6.82,
+      "durationSec": 409.22,
+      "done": false,
+      "planOrder": 25,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收20-固收久期公式考生题问点.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 26,
+      "subject": "固收",
+      "episode": "027. 固收21-资产证券化1",
+      "chapter": "固收21-资产证券化1",
+      "duration": "19.85分钟",
+      "durationMin": 19.85,
+      "durationSec": 1190.87,
+      "done": false,
+      "planOrder": 26,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收21-资产证券化1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 27,
+      "subject": "固收",
+      "episode": "028. 固收22-资产证券化2",
+      "chapter": "固收22-资产证券化2",
+      "duration": "10.36分钟",
+      "durationMin": 10.36,
+      "durationSec": 621.64,
+      "done": false,
+      "planOrder": 27,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/固收22-资产证券化2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 28,
+      "subject": "固收",
+      "episode": "029. 23-固收-风险测度工具1",
+      "chapter": "23-固收-风险测度工具1",
+      "duration": "8.72分钟",
+      "durationMin": 8.72,
+      "durationSec": 523.21,
+      "done": false,
+      "planOrder": 28,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/23-固收-风险测度工具1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 29,
+      "subject": "固收",
+      "episode": "030. 24-固收-风险测度工具2",
+      "chapter": "24-固收-风险测度工具2",
+      "duration": "14.83分钟",
+      "durationMin": 14.83,
+      "durationSec": 889.64,
+      "done": false,
+      "planOrder": 29,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/24-固收-风险测度工具2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 30,
+      "subject": "固收",
+      "episode": "031. 25-固收-风险测度工具3",
+      "chapter": "25-固收-风险测度工具3",
+      "duration": "9.29分钟",
+      "durationMin": 9.29,
+      "durationSec": 557.29,
+      "done": false,
+      "planOrder": 30,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/25-固收-风险测度工具3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 31,
+      "subject": "固收",
+      "episode": "032. 26-固收-风险测度工具4",
+      "chapter": "26-固收-风险测度工具4",
+      "duration": "41.69分钟",
+      "durationMin": 41.69,
+      "durationSec": 2501.24,
+      "done": false,
+      "planOrder": 31,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/26-固收-风险测度工具4.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 32,
+      "subject": "固收",
+      "episode": "033. 27-固收-风险测度工具5",
+      "chapter": "27-固收-风险测度工具5",
+      "duration": "18.26分钟",
+      "durationMin": 18.26,
+      "durationSec": 1095.57,
+      "done": false,
+      "planOrder": 32,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/固收/27-固收-风险测度工具5.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 33,
+      "subject": "衍生品",
+      "episode": "034. 0-1-衍生品基础班1——导论",
+      "chapter": "0-1-衍生品基础班1——导论",
+      "duration": "16.04分钟",
+      "durationMin": 16.04,
+      "durationSec": 962.29,
+      "done": false,
+      "planOrder": 33,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/0-1-衍生品基础班1——导论.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 34,
+      "subject": "衍生品",
+      "episode": "035. 0-2-衍生品基础班2——期货基础知识",
+      "chapter": "0-2-衍生品基础班2——期货基础知识",
+      "duration": "50.58分钟",
+      "durationMin": 50.58,
+      "durationSec": 3034.76,
+      "done": false,
+      "planOrder": 34,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/0-2-衍生品基础班2——期货基础知识.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 35,
+      "subject": "衍生品",
+      "episode": "036. 0-3-衍生品基础班3——期权基础知识",
+      "chapter": "0-3-衍生品基础班3——期权基础知识",
+      "duration": "23.67分钟",
+      "durationMin": 23.67,
+      "durationSec": 1420.39,
+      "done": false,
+      "planOrder": 35,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/0-3-衍生品基础班3——期权基础知识.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 36,
+      "subject": "衍生品",
+      "episode": "037. 0-4-衍生品基础班4——互换基础知识",
+      "chapter": "0-4-衍生品基础班4——互换基础知识",
+      "duration": "17.53分钟",
+      "durationMin": 17.53,
+      "durationSec": 1052.06,
+      "done": false,
+      "planOrder": 36,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/0-4-衍生品基础班4——互换基础知识.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 37,
+      "subject": "衍生品",
+      "episode": "038. 0-5-衍生品基础班5——信用衍生品基础",
+      "chapter": "0-5-衍生品基础班5——信用衍生品基础",
+      "duration": "9.12分钟",
+      "durationMin": 9.12,
+      "durationSec": 547.32,
+      "done": false,
+      "planOrder": 37,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/0-5-衍生品基础班5——信用衍生品基础.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 38,
+      "subject": "衍生品",
+      "episode": "039. 1-知识点",
+      "chapter": "1-知识点",
+      "duration": "33.72分钟",
+      "durationMin": 33.72,
+      "durationSec": 2023.47,
+      "done": false,
+      "planOrder": 38,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/1-知识点.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 39,
+      "subject": "衍生品",
+      "episode": "040. 2-CDS1",
+      "chapter": "2-CDS1",
+      "duration": "10.71分钟",
+      "durationMin": 10.71,
+      "durationSec": 642.88,
+      "done": false,
+      "planOrder": 39,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/2-CDS1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 40,
+      "subject": "衍生品",
+      "episode": "041. 3-CDS2",
+      "chapter": "3-CDS2",
+      "duration": "13.22分钟",
+      "durationMin": 13.22,
+      "durationSec": 793.34,
+      "done": false,
+      "planOrder": 40,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/3-CDS2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 41,
+      "subject": "衍生品",
+      "episode": "042. 4-CDS3",
+      "chapter": "4-CDS3",
+      "duration": "0.62分钟",
+      "durationMin": 0.62,
+      "durationSec": 37.46,
+      "done": false,
+      "planOrder": 41,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/4-CDS3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 42,
+      "subject": "衍生品",
+      "episode": "043. 5-CDS4",
+      "chapter": "5-CDS4",
+      "duration": "13.38分钟",
+      "durationMin": 13.38,
+      "durationSec": 802.84,
+      "done": false,
+      "planOrder": 42,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/5-CDS4.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 43,
+      "subject": "衍生品",
+      "episode": "044. 6-CDS5",
+      "chapter": "6-CDS5",
+      "duration": "11.06分钟",
+      "durationMin": 11.06,
+      "durationSec": 663.77,
+      "done": false,
+      "planOrder": 43,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/6-CDS5.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 44,
+      "subject": "衍生品",
+      "episode": "045. 7-互换",
+      "chapter": "7-互换",
+      "duration": "24.20分钟",
+      "durationMin": 24.2,
+      "durationSec": 1452.05,
+      "done": false,
+      "planOrder": 44,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/7-互换.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 45,
+      "subject": "衍生品",
+      "episode": "046. 8-期权定价公式",
+      "chapter": "8-期权定价公式",
+      "duration": "36.20分钟",
+      "durationMin": 36.2,
+      "durationSec": 2172.29,
+      "done": false,
+      "planOrder": 45,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/8-期权定价公式.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 46,
+      "subject": "衍生品",
+      "episode": "047. 9-平价公式1",
+      "chapter": "9-平价公式1",
+      "duration": "10.53分钟",
+      "durationMin": 10.53,
+      "durationSec": 631.77,
+      "done": false,
+      "planOrder": 46,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/9-平价公式1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 47,
+      "subject": "衍生品",
+      "episode": "048. 10-平价公式2",
+      "chapter": "10-平价公式2",
+      "duration": "7.11分钟",
+      "durationMin": 7.11,
+      "durationSec": 426.52,
+      "done": false,
+      "planOrder": 47,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/10-平价公式2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 48,
+      "subject": "衍生品",
+      "episode": "049. 11-画图题",
+      "chapter": "11-画图题",
+      "duration": "22.48分钟",
+      "durationMin": 22.48,
+      "durationSec": 1349.08,
+      "done": false,
+      "planOrder": 48,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/11-画图题.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 49,
+      "subject": "衍生品",
+      "episode": "050. 12-期权期货策略",
+      "chapter": "12-期权期货策略",
+      "duration": "13.73分钟",
+      "durationMin": 13.73,
+      "durationSec": 824.04,
+      "done": false,
+      "planOrder": 49,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/12-期权期货策略.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 50,
+      "subject": "衍生品",
+      "episode": "051. 13-汇率题1",
+      "chapter": "13-汇率题1",
+      "duration": "13.98分钟",
+      "durationMin": 13.98,
+      "durationSec": 838.51,
+      "done": false,
+      "planOrder": 50,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/13-汇率题1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 51,
+      "subject": "衍生品",
+      "episode": "052. 14-汇率题2",
+      "chapter": "14-汇率题2",
+      "duration": "11.44分钟",
+      "durationMin": 11.44,
+      "durationSec": 686.27,
+      "done": false,
+      "planOrder": 51,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/14-汇率题2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 52,
+      "subject": "衍生品",
+      "episode": "053. 15-汇率题3",
+      "chapter": "15-汇率题3",
+      "duration": "8.55分钟",
+      "durationMin": 8.55,
+      "durationSec": 513.11,
+      "done": false,
+      "planOrder": 52,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/15-汇率题3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 53,
+      "subject": "衍生品",
+      "episode": "054. 16-汇率题4",
+      "chapter": "16-汇率题4",
+      "duration": "5.50分钟",
+      "durationMin": 5.5,
+      "durationSec": 329.84,
+      "done": false,
+      "planOrder": 53,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/16-汇率题4.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 54,
+      "subject": "衍生品",
+      "episode": "055. 17-期权策略1",
+      "chapter": "17-期权策略1",
+      "duration": "15.35分钟",
+      "durationMin": 15.35,
+      "durationSec": 921.17,
+      "done": false,
+      "planOrder": 54,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/17-期权策略1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 55,
+      "subject": "衍生品",
+      "episode": "056. 18-期权策略2",
+      "chapter": "18-期权策略2",
+      "duration": "9.50分钟",
+      "durationMin": 9.5,
+      "durationSec": 570.13,
+      "done": false,
+      "planOrder": 55,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/18-期权策略2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 56,
+      "subject": "衍生品",
+      "episode": "057. 19-期权上下限及套利",
+      "chapter": "19-期权上下限及套利",
+      "duration": "33.14分钟",
+      "durationMin": 33.14,
+      "durationSec": 1988.67,
+      "done": false,
+      "planOrder": 56,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/19-期权上下限及套利.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 57,
+      "subject": "衍生品",
+      "episode": "058. 20-其他知识",
+      "chapter": "20-其他知识",
+      "duration": "10.16分钟",
+      "durationMin": 10.16,
+      "durationSec": 609.39,
+      "done": false,
+      "planOrder": 57,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/20-其他知识.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 58,
+      "subject": "衍生品",
+      "episode": "059. 21-衍生品期货的套利",
+      "chapter": "21-衍生品期货的套利",
+      "duration": "10.88分钟",
+      "durationMin": 10.88,
+      "durationSec": 653.06,
+      "done": false,
+      "planOrder": 58,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/21-衍生品期货的套利.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 59,
+      "subject": "衍生品",
+      "episode": "060. 22-卷二衍生品二叉树定价1",
+      "chapter": "22-卷二衍生品二叉树定价1",
+      "duration": "34.43分钟",
+      "durationMin": 34.43,
+      "durationSec": 2065.63,
+      "done": false,
+      "planOrder": 59,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/22-卷二衍生品二叉树定价1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 60,
+      "subject": "衍生品",
+      "episode": "061. 23-卷二衍生品二叉树定价2",
+      "chapter": "23-卷二衍生品二叉树定价2",
+      "duration": "24.91分钟",
+      "durationMin": 24.91,
+      "durationSec": 1494.8,
+      "done": false,
+      "planOrder": 60,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/23-卷二衍生品二叉树定价2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 61,
+      "subject": "衍生品",
+      "episode": "062. 24-卷二衍生品希腊字母补充",
+      "chapter": "24-卷二衍生品希腊字母补充",
+      "duration": "11.57分钟",
+      "durationMin": 11.57,
+      "durationSec": 694.17,
+      "done": false,
+      "planOrder": 61,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/24-卷二衍生品希腊字母补充.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 62,
+      "subject": "衍生品",
+      "episode": "063. 25-期权隐含波动率",
+      "chapter": "25-期权隐含波动率",
+      "duration": "34.12分钟",
+      "durationMin": 34.12,
+      "durationSec": 2047.46,
+      "done": false,
+      "planOrder": 62,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/25-期权隐含波动率.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 63,
+      "subject": "衍生品",
+      "episode": "064. 26-奇异期权1",
+      "chapter": "26-奇异期权1",
+      "duration": "27.61分钟",
+      "durationMin": 27.61,
+      "durationSec": 1656.82,
+      "done": false,
+      "planOrder": 63,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/26-奇异期权1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 64,
+      "subject": "衍生品",
+      "episode": "065. 27-奇异期权2",
+      "chapter": "27-奇异期权2",
+      "duration": "12.15分钟",
+      "durationMin": 12.15,
+      "durationSec": 728.78,
+      "done": false,
+      "planOrder": 64,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/27-奇异期权2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 65,
+      "subject": "衍生品",
+      "episode": "066. 28-奇异期权3",
+      "chapter": "28-奇异期权3",
+      "duration": "11.62分钟",
+      "durationMin": 11.62,
+      "durationSec": 697.1,
+      "done": false,
+      "planOrder": 65,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/28-奇异期权3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 66,
+      "subject": "衍生品",
+      "episode": "067. 29-信用联结票据",
+      "chapter": "29-信用联结票据",
+      "duration": "15.40分钟",
+      "durationMin": 15.4,
+      "durationSec": 923.71,
+      "done": false,
+      "planOrder": 66,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/衍生品/29-信用联结票据.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 67,
+      "subject": "组合",
+      "episode": "068. 组合0-组合导学",
+      "chapter": "组合0-组合导学",
+      "duration": "2.97分钟",
+      "durationMin": 2.97,
+      "durationSec": 178.41,
+      "done": false,
+      "planOrder": 67,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合0-组合导学.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 68,
+      "subject": "组合",
+      "episode": "069. 组合1-组合与固收",
+      "chapter": "组合1-组合与固收",
+      "duration": "4.77分钟",
+      "durationMin": 4.77,
+      "durationSec": 286.44,
+      "done": false,
+      "planOrder": 68,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合1-组合与固收.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 69,
+      "subject": "组合",
+      "episode": "070. 组合2-组合与衍生品1",
+      "chapter": "组合2-组合与衍生品1",
+      "duration": "6.71分钟",
+      "durationMin": 6.71,
+      "durationSec": 402.69,
+      "done": false,
+      "planOrder": 69,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合2-组合与衍生品1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 70,
+      "subject": "组合",
+      "episode": "071. 组合3-组合与衍生品2",
+      "chapter": "组合3-组合与衍生品2",
+      "duration": "5.73分钟",
+      "durationMin": 5.73,
+      "durationSec": 343.62,
+      "done": false,
+      "planOrder": 70,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合3-组合与衍生品2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 71,
+      "subject": "组合",
+      "episode": "072. 组合4-组合与衍生品3",
+      "chapter": "组合4-组合与衍生品3",
+      "duration": "4.77分钟",
+      "durationMin": 4.77,
+      "durationSec": 286.49,
+      "done": false,
+      "planOrder": 71,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合4-组合与衍生品3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 72,
+      "subject": "组合",
+      "episode": "073. 组合5-组合与衍生品4-1",
+      "chapter": "组合5-组合与衍生品4-1",
+      "duration": "10.20分钟",
+      "durationMin": 10.2,
+      "durationSec": 612.14,
+      "done": false,
+      "planOrder": 72,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合5-组合与衍生品4-1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 73,
+      "subject": "组合",
+      "episode": "074. 组合6-组合与衍生品4-2",
+      "chapter": "组合6-组合与衍生品4-2",
+      "duration": "14.75分钟",
+      "durationMin": 14.75,
+      "durationSec": 884.82,
+      "done": false,
+      "planOrder": 73,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合6-组合与衍生品4-2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 74,
+      "subject": "组合",
+      "episode": "075. 组合7-套期保值策略1",
+      "chapter": "组合7-套期保值策略1",
+      "duration": "14.05分钟",
+      "durationMin": 14.05,
+      "durationSec": 842.93,
+      "done": false,
+      "planOrder": 74,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合7-套期保值策略1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 75,
+      "subject": "组合",
+      "episode": "076. 组合8-套期保值策略2",
+      "chapter": "组合8-套期保值策略2",
+      "duration": "6.89分钟",
+      "durationMin": 6.89,
+      "durationSec": 413.3,
+      "done": false,
+      "planOrder": 75,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合8-套期保值策略2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 76,
+      "subject": "组合",
+      "episode": "077. 组合9-套期保值策略3-静态保险策略1",
+      "chapter": "组合9-套期保值策略3-静态保险策略1",
+      "duration": "19.43分钟",
+      "durationMin": 19.43,
+      "durationSec": 1166.07,
+      "done": false,
+      "planOrder": 76,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合9-套期保值策略3-静态保险策略1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 77,
+      "subject": "组合",
+      "episode": "078. 组合10-套期保值策略4-静态保险策略2",
+      "chapter": "组合10-套期保值策略4-静态保险策略2",
+      "duration": "1.42分钟",
+      "durationMin": 1.42,
+      "durationSec": 85.32,
+      "done": false,
+      "planOrder": 77,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合10-套期保值策略4-静态保险策略2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 78,
+      "subject": "组合",
+      "episode": "079. 组合11-套期保值策略5-静态保险策略3",
+      "chapter": "组合11-套期保值策略5-静态保险策略3",
+      "duration": "30.86分钟",
+      "durationMin": 30.86,
+      "durationSec": 1851.48,
+      "done": false,
+      "planOrder": 78,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合11-套期保值策略5-静态保险策略3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 79,
+      "subject": "组合",
+      "episode": "080. 组合12-套期保值策略6-动态保险策略",
+      "chapter": "组合12-套期保值策略6-动态保险策略",
+      "duration": "32.36分钟",
+      "durationMin": 32.36,
+      "durationSec": 1941.43,
+      "done": false,
+      "planOrder": 79,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合12-套期保值策略6-动态保险策略.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 80,
+      "subject": "组合",
+      "episode": "081. 组合13-套期保值策略7-使用期货进行套期保值1",
+      "chapter": "组合13-套期保值策略7-使用期货进行套期保值1",
+      "duration": "24.41分钟",
+      "durationMin": 24.41,
+      "durationSec": 1464.43,
+      "done": false,
+      "planOrder": 80,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合13-套期保值策略7-使用期货进行套期保值1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 81,
+      "subject": "组合",
+      "episode": "082. 组合14-套期保值策略8-使用期货进行套期保值2",
+      "chapter": "组合14-套期保值策略8-使用期货进行套期保值2",
+      "duration": "6.16分钟",
+      "durationMin": 6.16,
+      "durationSec": 369.43,
+      "done": false,
+      "planOrder": 81,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合14-套期保值策略8-使用期货进行套期保值2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 82,
+      "subject": "组合",
+      "episode": "083. 组合15-保护性看跌期权",
+      "chapter": "组合15-保护性看跌期权",
+      "duration": "9.86分钟",
+      "durationMin": 9.86,
+      "durationSec": 591.79,
+      "done": false,
+      "planOrder": 82,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合15-保护性看跌期权.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 83,
+      "subject": "组合",
+      "episode": "084. 组合16-1-统计指标",
+      "chapter": "组合16-1-统计指标",
+      "duration": "9.84分钟",
+      "durationMin": 9.84,
+      "durationSec": 590.34,
+      "done": false,
+      "planOrder": 83,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合16-1-统计指标.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 84,
+      "subject": "组合",
+      "episode": "085. 组合16-2-统计指标纠正",
+      "chapter": "组合16-2-统计指标纠正",
+      "duration": "0.92分钟",
+      "durationMin": 0.92,
+      "durationSec": 55.4,
+      "done": false,
+      "planOrder": 84,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合16-2-统计指标纠正.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 85,
+      "subject": "组合",
+      "episode": "086. 组合17-盈余回报",
+      "chapter": "组合17-盈余回报",
+      "duration": "8.37分钟",
+      "durationMin": 8.37,
+      "durationSec": 502.1,
+      "done": false,
+      "planOrder": 85,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合17-盈余回报.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 86,
+      "subject": "组合",
+      "episode": "087. 组合18-CPPI策略",
+      "chapter": "组合18-CPPI策略",
+      "duration": "27.24分钟",
+      "durationMin": 27.24,
+      "durationSec": 1634.58,
+      "done": false,
+      "planOrder": 86,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合18-CPPI策略.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 87,
+      "subject": "组合",
+      "episode": "088. 组合19-TWR与MWR",
+      "chapter": "组合19-TWR与MWR",
+      "duration": "34.95分钟",
+      "durationMin": 34.95,
+      "durationSec": 2096.86,
+      "done": false,
+      "planOrder": 87,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合19-TWR与MWR.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 88,
+      "subject": "组合",
+      "episode": "089. 组合20-有效边界1",
+      "chapter": "组合20-有效边界1",
+      "duration": "24.55分钟",
+      "durationMin": 24.55,
+      "durationSec": 1472.73,
+      "done": false,
+      "planOrder": 88,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合20-有效边界1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 89,
+      "subject": "组合",
+      "episode": "090. 组合21-有效边界2",
+      "chapter": "组合21-有效边界2",
+      "duration": "62.31分钟",
+      "durationMin": 62.31,
+      "durationSec": 3738.67,
+      "done": false,
+      "planOrder": 89,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合21-有效边界2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 90,
+      "subject": "组合",
+      "episode": "091. 组合22-有效边界3",
+      "chapter": "组合22-有效边界3",
+      "duration": "4.55分钟",
+      "durationMin": 4.55,
+      "durationSec": 272.83,
+      "done": false,
+      "planOrder": 90,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合22-有效边界3.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 91,
+      "subject": "组合",
+      "episode": "092. 组合23-各种比率",
+      "chapter": "组合23-各种比率",
+      "duration": "2.92分钟",
+      "durationMin": 2.92,
+      "durationSec": 175.25,
+      "done": false,
+      "planOrder": 91,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合23-各种比率.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 92,
+      "subject": "组合",
+      "episode": "093. 组合24-有效市场",
+      "chapter": "组合24-有效市场",
+      "duration": "3.03分钟",
+      "durationMin": 3.03,
+      "durationSec": 182.02,
+      "done": false,
+      "planOrder": 92,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合24-有效市场.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 93,
+      "subject": "组合",
+      "episode": "094. 组合25-追踪误差与信息比率纠正",
+      "chapter": "组合25-追踪误差与信息比率纠正",
+      "duration": "2.95分钟",
+      "durationMin": 2.95,
+      "durationSec": 177.24,
+      "done": false,
+      "planOrder": 93,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合25-追踪误差与信息比率纠正.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 94,
+      "subject": "组合",
+      "episode": "095. 组合26-1追踪误差",
+      "chapter": "组合26-1追踪误差",
+      "duration": "23.00分钟",
+      "durationMin": 23.0,
+      "durationSec": 1380.03,
+      "done": false,
+      "planOrder": 94,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合26-1追踪误差.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 95,
+      "subject": "组合",
+      "episode": "096. 组合26-2多因素模型-追踪误差",
+      "chapter": "组合26-2多因素模型-追踪误差",
+      "duration": "36.47分钟",
+      "durationMin": 36.47,
+      "durationSec": 2188.44,
+      "done": false,
+      "planOrder": 95,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合26-2多因素模型-追踪误差.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 96,
+      "subject": "组合",
+      "episode": "097. 组合26-3追踪误差与信息比率",
+      "chapter": "组合26-3追踪误差与信息比率",
+      "duration": "4.78分钟",
+      "durationMin": 4.78,
+      "durationSec": 286.96,
+      "done": false,
+      "planOrder": 96,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合26-3追踪误差与信息比率.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 97,
+      "subject": "组合",
+      "episode": "098. 组合27-单指数APT",
+      "chapter": "组合27-单指数APT",
+      "duration": "29.45分钟",
+      "durationMin": 29.45,
+      "durationSec": 1767.06,
+      "done": false,
+      "planOrder": 97,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合27-单指数APT.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 98,
+      "subject": "组合",
+      "episode": "099. 组合28-迪茨近似法",
+      "chapter": "组合28-迪茨近似法",
+      "duration": "22.52分钟",
+      "durationMin": 22.52,
+      "durationSec": 1351.34,
+      "done": false,
+      "planOrder": 98,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合28-迪茨近似法.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 99,
+      "subject": "组合",
+      "episode": "100. 组合29-VAR",
+      "chapter": "组合29-VAR",
+      "duration": "12.65分钟",
+      "durationMin": 12.65,
+      "durationSec": 759.28,
+      "done": false,
+      "planOrder": 99,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合29-VAR.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 100,
+      "subject": "组合",
+      "episode": "101. 组合30-补充知识1",
+      "chapter": "组合30-补充知识1",
+      "duration": "18.79分钟",
+      "durationMin": 18.79,
+      "durationSec": 1127.21,
+      "done": false,
+      "planOrder": 100,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合30-补充知识1.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 101,
+      "subject": "组合",
+      "episode": "102. 组合31-补充知识2",
+      "chapter": "组合31-补充知识2",
+      "duration": "27.63分钟",
+      "durationMin": 27.63,
+      "durationSec": 1657.98,
+      "done": false,
+      "planOrder": 101,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合31-补充知识2.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 102,
+      "subject": "组合",
+      "episode": "103. 组合32-其他知识",
+      "chapter": "组合32-其他知识",
+      "duration": "5.28分钟",
+      "durationMin": 5.28,
+      "durationSec": 316.74,
+      "done": false,
+      "planOrder": 102,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合32-其他知识.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 103,
+      "subject": "组合",
+      "episode": "104. 组合33-组合拓展",
+      "chapter": "组合33-组合拓展",
+      "duration": "9.47分钟",
+      "durationMin": 9.47,
+      "durationSec": 568.43,
+      "done": false,
+      "planOrder": 103,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合33-组合拓展.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 104,
+      "subject": "组合",
+      "episode": "105. 组合34-养老金ALM",
+      "chapter": "组合34-养老金ALM",
+      "duration": "31.58分钟",
+      "durationMin": 31.58,
+      "durationSec": 1894.87,
+      "done": false,
+      "planOrder": 104,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/组合34-养老金ALM.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 105,
+      "subject": "组合",
+      "episode": "106. 35-国际投资",
+      "chapter": "35-国际投资",
+      "duration": "23.39分钟",
+      "durationMin": 23.39,
+      "durationSec": 1403.26,
+      "done": false,
+      "planOrder": 105,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/35-国际投资.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 106,
+      "subject": "组合",
+      "episode": "107. 36-ESG投资",
+      "chapter": "36-ESG投资",
+      "duration": "30.84分钟",
+      "durationMin": 30.84,
+      "durationSec": 1850.24,
+      "done": false,
+      "planOrder": 106,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/36-ESG投资.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 107,
+      "subject": "组合",
+      "episode": "108. 37-房地产与私募股权",
+      "chapter": "37-房地产与私募股权",
+      "duration": "21.79分钟",
+      "durationMin": 21.79,
+      "durationSec": 1307.36,
+      "done": false,
+      "planOrder": 107,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/37-房地产与私募股权.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 108,
+      "subject": "组合",
+      "episode": "109. 38-对冲基金",
+      "chapter": "38-对冲基金",
+      "duration": "31.92分钟",
+      "durationMin": 31.92,
+      "durationSec": 1915.32,
+      "done": false,
+      "planOrder": 108,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/38-对冲基金.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 109,
+      "subject": "组合",
+      "episode": "110. 39-大宗商品",
+      "chapter": "39-大宗商品",
+      "duration": "19.86分钟",
+      "durationMin": 19.86,
+      "durationSec": 1191.34,
+      "done": false,
+      "planOrder": 109,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二/组合/39-大宗商品.ev4a",
+      "sourceKind": "ev4a"
+    },
+    {
+      "id": 110,
+      "subject": "真题",
+      "episode": "111. 真题视频前导1",
+      "chapter": "真题视频前导1",
+      "duration": "10.53分钟",
+      "durationMin": 10.53,
+      "durationSec": 631.77,
+      "done": false,
+      "planOrder": 110,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/真题视频前导1.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": null,
+      "examMonth": null
+    },
+    {
+      "id": 111,
+      "subject": "真题",
+      "episode": "112. 真题视频前导2",
+      "chapter": "真题视频前导2",
+      "duration": "7.11分钟",
+      "durationMin": 7.11,
+      "durationSec": 426.52,
+      "done": false,
+      "planOrder": 111,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/真题视频前导2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": null,
+      "examMonth": null
+    },
+    {
+      "id": 112,
+      "subject": "真题",
+      "episode": "113. 真题视频前导3",
+      "chapter": "真题视频前导3",
+      "duration": "22.48分钟",
+      "durationMin": 22.48,
+      "durationSec": 1349.08,
+      "done": false,
+      "planOrder": 112,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/真题视频前导3.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": null,
+      "examMonth": null
+    },
+    {
+      "id": 113,
+      "subject": "真题",
+      "episode": "114. 真题视频前导4",
+      "chapter": "真题视频前导4",
+      "duration": "33.14分钟",
+      "durationMin": 33.14,
+      "durationSec": 1988.67,
+      "done": false,
+      "planOrder": 113,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/真题视频前导4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": null,
+      "examMonth": null
+    },
+    {
+      "id": 114,
+      "subject": "真题",
+      "episode": "115. 真题视频前导5",
+      "chapter": "真题视频前导5",
+      "duration": "10.88分钟",
+      "durationMin": 10.88,
+      "durationSec": 653.06,
+      "done": false,
+      "planOrder": 114,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/真题视频前导5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": null,
+      "examMonth": null
+    },
+    {
+      "id": 115,
+      "subject": "真题",
+      "episode": "116. 2024年9月卷二固收1",
+      "chapter": "2024年9月卷二固收1",
+      "duration": "12.17分钟",
+      "durationMin": 12.17,
+      "durationSec": 730.2,
+      "done": false,
+      "planOrder": 115,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二固收1.mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 116,
+      "subject": "真题",
+      "episode": "117. 2024年9月卷二固收2a",
+      "chapter": "2024年9月卷二固收2a",
+      "duration": "19.29分钟",
+      "durationMin": 19.29,
+      "durationSec": 1157.4,
+      "done": false,
+      "planOrder": 116,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二固收2a .mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 117,
+      "subject": "真题",
+      "episode": "118. 2024年9月卷二固收2b",
+      "chapter": "2024年9月卷二固收2b",
+      "duration": "17.19分钟",
+      "durationMin": 17.19,
+      "durationSec": 1031.4,
+      "done": false,
+      "planOrder": 117,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二固收2b.mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 118,
+      "subject": "真题",
+      "episode": "119. 2024年9月卷二组合5",
+      "chapter": "2024年9月卷二组合5",
+      "duration": "9.44分钟",
+      "durationMin": 9.44,
+      "durationSec": 566.4,
+      "done": false,
+      "planOrder": 118,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二组合5.mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 119,
+      "subject": "真题",
+      "episode": "120. 2024年9月卷二衍生品3",
+      "chapter": "2024年9月卷二衍生品3",
+      "duration": "7.15分钟",
+      "durationMin": 7.15,
+      "durationSec": 429.0,
+      "done": false,
+      "planOrder": 119,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二衍生品3.mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 120,
+      "subject": "真题",
+      "episode": "121. 2024年9月卷二衍生品4",
+      "chapter": "2024年9月卷二衍生品4",
+      "duration": "10.24分钟",
+      "durationMin": 10.24,
+      "durationSec": 614.4,
+      "done": false,
+      "planOrder": 120,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新/2024年9月卷二衍生品4.mp4",
+      "sourceKind": "mp4",
+      "examYear": 2024,
+      "examMonth": 9
+    },
+    {
+      "id": 121,
+      "subject": "真题",
+      "episode": "122. 2024年3月卷二固收1",
+      "chapter": "2024年3月卷二固收1",
+      "duration": "32.65分钟",
+      "durationMin": 32.65,
+      "durationSec": 1959.25,
+      "done": false,
+      "planOrder": 121,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二固收1.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 122,
+      "subject": "真题",
+      "episode": "123. 2024年3月卷二固收2",
+      "chapter": "2024年3月卷二固收2",
+      "duration": "26.68分钟",
+      "durationMin": 26.68,
+      "durationSec": 1600.85,
+      "done": false,
+      "planOrder": 122,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二固收2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 123,
+      "subject": "真题",
+      "episode": "124. 2024年3月卷二固收2c问",
+      "chapter": "2024年3月卷二固收2c问",
+      "duration": "6.18分钟",
+      "durationMin": 6.18,
+      "durationSec": 370.7,
+      "done": false,
+      "planOrder": 123,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二固收2c问.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 124,
+      "subject": "真题",
+      "episode": "125. 2024年3月卷二组合4",
+      "chapter": "2024年3月卷二组合4",
+      "duration": "14.03分钟",
+      "durationMin": 14.03,
+      "durationSec": 841.65,
+      "done": false,
+      "planOrder": 124,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二组合4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 125,
+      "subject": "真题",
+      "episode": "126. 2024年3月卷二组合5",
+      "chapter": "2024年3月卷二组合5",
+      "duration": "15.54分钟",
+      "durationMin": 15.54,
+      "durationSec": 932.51,
+      "done": false,
+      "planOrder": 125,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 126,
+      "subject": "真题",
+      "episode": "127. 2024年3月卷二衍生品3",
+      "chapter": "2024年3月卷二衍生品3",
+      "duration": "16.32分钟",
+      "durationMin": 16.32,
+      "durationSec": 979.12,
+      "done": false,
+      "planOrder": 126,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2024年3月卷二衍生品3.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2024,
+      "examMonth": 3
+    },
+    {
+      "id": 127,
+      "subject": "真题",
+      "episode": "128. 2022年3月卷二固收a",
+      "chapter": "2022年3月卷二固收a",
+      "duration": "24.59分钟",
+      "durationMin": 24.59,
+      "durationSec": 1475.35,
+      "done": false,
+      "planOrder": 127,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 128,
+      "subject": "真题",
+      "episode": "129. 2022年3月卷二固收b",
+      "chapter": "2022年3月卷二固收b",
+      "duration": "12.55分钟",
+      "durationMin": 12.55,
+      "durationSec": 752.86,
+      "done": false,
+      "planOrder": 128,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二固收b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 129,
+      "subject": "真题",
+      "episode": "130. 2022年3月卷二组合4",
+      "chapter": "2022年3月卷二组合4",
+      "duration": "23.72分钟",
+      "durationMin": 23.72,
+      "durationSec": 1423.38,
+      "done": false,
+      "planOrder": 129,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二组合4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 130,
+      "subject": "真题",
+      "episode": "131. 2022年3月卷二组合5",
+      "chapter": "2022年3月卷二组合5",
+      "duration": "3.72分钟",
+      "durationMin": 3.72,
+      "durationSec": 223.05,
+      "done": false,
+      "planOrder": 130,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 131,
+      "subject": "真题",
+      "episode": "132. 2022年3月卷二衍生品2",
+      "chapter": "2022年3月卷二衍生品2",
+      "duration": "16.03分钟",
+      "durationMin": 16.03,
+      "durationSec": 961.77,
+      "done": false,
+      "planOrder": 131,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二衍生品2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 132,
+      "subject": "真题",
+      "episode": "133. 2022年3月卷二衍生品3a,b12",
+      "chapter": "2022年3月卷二衍生品3a,b12",
+      "duration": "7.25分钟",
+      "durationMin": 7.25,
+      "durationSec": 435.1,
+      "done": false,
+      "planOrder": 132,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二衍生品3a,b12.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 133,
+      "subject": "真题",
+      "episode": "134. 2022年3月卷二衍生品3b345",
+      "chapter": "2022年3月卷二衍生品3b345",
+      "duration": "3.33分钟",
+      "durationMin": 3.33,
+      "durationSec": 199.83,
+      "done": false,
+      "planOrder": 133,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二衍生品3b345.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 134,
+      "subject": "真题",
+      "episode": "135. 2022年3月卷二衍生品3c",
+      "chapter": "2022年3月卷二衍生品3c",
+      "duration": "7.68分钟",
+      "durationMin": 7.68,
+      "durationSec": 460.87,
+      "done": false,
+      "planOrder": 134,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2022年3月卷二衍生品3c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2022,
+      "examMonth": 3
+    },
+    {
+      "id": 135,
+      "subject": "真题",
+      "episode": "136. 2021年卷二问题1a",
+      "chapter": "2021年卷二问题1a",
+      "duration": "7.57分钟",
+      "durationMin": 7.57,
+      "durationSec": 454.37,
+      "done": false,
+      "planOrder": 135,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题1a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 136,
+      "subject": "真题",
+      "episode": "137. 2021年卷二问题1b",
+      "chapter": "2021年卷二问题1b",
+      "duration": "6.56分钟",
+      "durationMin": 6.56,
+      "durationSec": 393.83,
+      "done": false,
+      "planOrder": 136,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题1b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 137,
+      "subject": "真题",
+      "episode": "138. 2021年卷二问题2",
+      "chapter": "2021年卷二问题2",
+      "duration": "21.82分钟",
+      "durationMin": 21.82,
+      "durationSec": 1309.1,
+      "done": false,
+      "planOrder": 137,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 138,
+      "subject": "真题",
+      "episode": "139. 2021年卷二问题3a",
+      "chapter": "2021年卷二问题3a",
+      "duration": "14.96分钟",
+      "durationMin": 14.96,
+      "durationSec": 897.5,
+      "done": false,
+      "planOrder": 138,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题3a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 139,
+      "subject": "真题",
+      "episode": "140. 2021年卷二问题3bc",
+      "chapter": "2021年卷二问题3bc",
+      "duration": "4.61分钟",
+      "durationMin": 4.61,
+      "durationSec": 276.3,
+      "done": false,
+      "planOrder": 139,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题3bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 140,
+      "subject": "真题",
+      "episode": "141. 2021年卷二问题4abc",
+      "chapter": "2021年卷二问题4abc",
+      "duration": "15.09分钟",
+      "durationMin": 15.09,
+      "durationSec": 905.57,
+      "done": false,
+      "planOrder": 140,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题4abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 141,
+      "subject": "真题",
+      "episode": "142. 2021年卷二问题4de",
+      "chapter": "2021年卷二问题4de",
+      "duration": "6.39分钟",
+      "durationMin": 6.39,
+      "durationSec": 383.62,
+      "done": false,
+      "planOrder": 141,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题4de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 142,
+      "subject": "真题",
+      "episode": "143. 2021年卷二问题4f",
+      "chapter": "2021年卷二问题4f",
+      "duration": "3.34分钟",
+      "durationMin": 3.34,
+      "durationSec": 200.68,
+      "done": false,
+      "planOrder": 142,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题4f.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 143,
+      "subject": "真题",
+      "episode": "144. 2021年卷二问题4g",
+      "chapter": "2021年卷二问题4g",
+      "duration": "6.30分钟",
+      "durationMin": 6.3,
+      "durationSec": 377.8,
+      "done": false,
+      "planOrder": 143,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题4g.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 144,
+      "subject": "真题",
+      "episode": "145. 2021年卷二问题5abcdefg",
+      "chapter": "2021年卷二问题5abcdefg",
+      "duration": "22.00分钟",
+      "durationMin": 22.0,
+      "durationSec": 1319.74,
+      "done": false,
+      "planOrder": 144,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题5abcdefg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 145,
+      "subject": "真题",
+      "episode": "146. 2021年卷二问题5hi",
+      "chapter": "2021年卷二问题5hi",
+      "duration": "8.57分钟",
+      "durationMin": 8.57,
+      "durationSec": 514.2,
+      "done": false,
+      "planOrder": 145,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2021年卷二问题5hi.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2021,
+      "examMonth": 0
+    },
+    {
+      "id": 146,
+      "subject": "真题",
+      "episode": "147. 2020年9月固收1a",
+      "chapter": "2020年9月固收1a",
+      "duration": "18.13分钟",
+      "durationMin": 18.13,
+      "durationSec": 1087.81,
+      "done": false,
+      "planOrder": 146,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月固收1a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 147,
+      "subject": "真题",
+      "episode": "148. 2020年9月固收1bc",
+      "chapter": "2020年9月固收1bc",
+      "duration": "4.36分钟",
+      "durationMin": 4.36,
+      "durationSec": 261.87,
+      "done": false,
+      "planOrder": 147,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月固收1bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 148,
+      "subject": "真题",
+      "episode": "149. 2020年9月固收1defg",
+      "chapter": "2020年9月固收1defg",
+      "duration": "5.77分钟",
+      "durationMin": 5.77,
+      "durationSec": 346.18,
+      "done": false,
+      "planOrder": 148,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月固收1defg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 149,
+      "subject": "真题",
+      "episode": "150. 2020年9月固收2",
+      "chapter": "2020年9月固收2",
+      "duration": "11.80分钟",
+      "durationMin": 11.8,
+      "durationSec": 708.17,
+      "done": false,
+      "planOrder": 149,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月固收2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 150,
+      "subject": "真题",
+      "episode": "151. 2020年9月组合5",
+      "chapter": "2020年9月组合5",
+      "duration": "7.68分钟",
+      "durationMin": 7.68,
+      "durationSec": 460.59,
+      "done": false,
+      "planOrder": 150,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 151,
+      "subject": "真题",
+      "episode": "152. 2020年9月组合6",
+      "chapter": "2020年9月组合6",
+      "duration": "10.03分钟",
+      "durationMin": 10.03,
+      "durationSec": 601.98,
+      "done": false,
+      "planOrder": 151,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月组合6.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 152,
+      "subject": "真题",
+      "episode": "153. 2020年9月衍生品3abc",
+      "chapter": "2020年9月衍生品3abc",
+      "duration": "7.50分钟",
+      "durationMin": 7.5,
+      "durationSec": 450.2,
+      "done": false,
+      "planOrder": 152,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月衍生品3abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 153,
+      "subject": "真题",
+      "episode": "154. 2020年9月衍生品3def",
+      "chapter": "2020年9月衍生品3def",
+      "duration": "5.50分钟",
+      "durationMin": 5.5,
+      "durationSec": 330.03,
+      "done": false,
+      "planOrder": 153,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月衍生品3def.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 154,
+      "subject": "真题",
+      "episode": "155. 2020年9月衍生品3gh",
+      "chapter": "2020年9月衍生品3gh",
+      "duration": "12.16分钟",
+      "durationMin": 12.16,
+      "durationSec": 729.41,
+      "done": false,
+      "planOrder": 154,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月衍生品3gh.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 155,
+      "subject": "真题",
+      "episode": "156. 2020年9月衍生品4",
+      "chapter": "2020年9月衍生品4",
+      "duration": "18.44分钟",
+      "durationMin": 18.44,
+      "durationSec": 1106.56,
+      "done": false,
+      "planOrder": 155,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2020年9月衍生品4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2020,
+      "examMonth": 9
+    },
+    {
+      "id": 156,
+      "subject": "真题",
+      "episode": "157. 2019年9月固收1",
+      "chapter": "2019年9月固收1",
+      "duration": "5.57分钟",
+      "durationMin": 5.57,
+      "durationSec": 334.36,
+      "done": false,
+      "planOrder": 156,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月固收1.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 157,
+      "subject": "真题",
+      "episode": "158. 2019年9月固收2",
+      "chapter": "2019年9月固收2",
+      "duration": "8.68分钟",
+      "durationMin": 8.68,
+      "durationSec": 520.98,
+      "done": false,
+      "planOrder": 157,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月固收2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 158,
+      "subject": "真题",
+      "episode": "159. 2019年9月固收3",
+      "chapter": "2019年9月固收3",
+      "duration": "3.82分钟",
+      "durationMin": 3.82,
+      "durationSec": 229.14,
+      "done": false,
+      "planOrder": 158,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月固收3.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 159,
+      "subject": "真题",
+      "episode": "160. 2019年9月组合6ab",
+      "chapter": "2019年9月组合6ab",
+      "duration": "8.68分钟",
+      "durationMin": 8.68,
+      "durationSec": 520.98,
+      "done": false,
+      "planOrder": 159,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月组合6ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 160,
+      "subject": "真题",
+      "episode": "161. 2019年9月组合6c",
+      "chapter": "2019年9月组合6c",
+      "duration": "5.87分钟",
+      "durationMin": 5.87,
+      "durationSec": 352.26,
+      "done": false,
+      "planOrder": 160,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月组合6c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 161,
+      "subject": "真题",
+      "episode": "162. 2019年9月衍生品4abc",
+      "chapter": "2019年9月衍生品4abc",
+      "duration": "6.84分钟",
+      "durationMin": 6.84,
+      "durationSec": 410.37,
+      "done": false,
+      "planOrder": 161,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月衍生品4abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 162,
+      "subject": "真题",
+      "episode": "163. 2019年9月衍生品4defg",
+      "chapter": "2019年9月衍生品4defg",
+      "duration": "8.17分钟",
+      "durationMin": 8.17,
+      "durationSec": 490.24,
+      "done": false,
+      "planOrder": 162,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月衍生品4defg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 163,
+      "subject": "真题",
+      "episode": "164. 2019年9月衍生品5",
+      "chapter": "2019年9月衍生品5",
+      "duration": "3.66分钟",
+      "durationMin": 3.66,
+      "durationSec": 219.31,
+      "done": false,
+      "planOrder": 163,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年9月衍生品5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 9
+    },
+    {
+      "id": 164,
+      "subject": "真题",
+      "episode": "165. 2019年3月固收a",
+      "chapter": "2019年3月固收a",
+      "duration": "27.44分钟",
+      "durationMin": 27.44,
+      "durationSec": 1646.21,
+      "done": false,
+      "planOrder": 164,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 165,
+      "subject": "真题",
+      "episode": "166. 2019年3月固收b",
+      "chapter": "2019年3月固收b",
+      "duration": "18.51分钟",
+      "durationMin": 18.51,
+      "durationSec": 1110.63,
+      "done": false,
+      "planOrder": 165,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月固收b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 166,
+      "subject": "真题",
+      "episode": "167. 2019年3月组合a",
+      "chapter": "2019年3月组合a",
+      "duration": "12.05分钟",
+      "durationMin": 12.05,
+      "durationSec": 722.82,
+      "done": false,
+      "planOrder": 166,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月组合a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 167,
+      "subject": "真题",
+      "episode": "168. 2019年3月组合b",
+      "chapter": "2019年3月组合b",
+      "duration": "10.12分钟",
+      "durationMin": 10.12,
+      "durationSec": 607.4,
+      "done": false,
+      "planOrder": 167,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月组合b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 168,
+      "subject": "真题",
+      "episode": "169. 2019年3月组合c123",
+      "chapter": "2019年3月组合c123",
+      "duration": "15.02分钟",
+      "durationMin": 15.02,
+      "durationSec": 901.08,
+      "done": false,
+      "planOrder": 168,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月组合c123.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 169,
+      "subject": "真题",
+      "episode": "170. 2019年3月组合c456",
+      "chapter": "2019年3月组合c456",
+      "duration": "8.52分钟",
+      "durationMin": 8.52,
+      "durationSec": 511.28,
+      "done": false,
+      "planOrder": 169,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月组合c456.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 170,
+      "subject": "真题",
+      "episode": "171. 2019年3月衍生品2abc",
+      "chapter": "2019年3月衍生品2abc",
+      "duration": "6.58分钟",
+      "durationMin": 6.58,
+      "durationSec": 394.52,
+      "done": false,
+      "planOrder": 170,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月衍生品2abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 171,
+      "subject": "真题",
+      "episode": "172. 2019年3月衍生品2de",
+      "chapter": "2019年3月衍生品2de",
+      "duration": "6.68分钟",
+      "durationMin": 6.68,
+      "durationSec": 400.81,
+      "done": false,
+      "planOrder": 171,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月衍生品2de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 172,
+      "subject": "真题",
+      "episode": "173. 2019年3月问3d",
+      "chapter": "2019年3月问3d",
+      "duration": "11.96分钟",
+      "durationMin": 11.96,
+      "durationSec": 717.85,
+      "done": false,
+      "planOrder": 172,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2019年3月问3d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2019,
+      "examMonth": 3
+    },
+    {
+      "id": 173,
+      "subject": "真题",
+      "episode": "174. 2018年9月固收",
+      "chapter": "2018年9月固收",
+      "duration": "15.73分钟",
+      "durationMin": 15.73,
+      "durationSec": 943.6,
+      "done": false,
+      "planOrder": 173,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月固收.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 174,
+      "subject": "真题",
+      "episode": "175. 2018年9月组合5abcd",
+      "chapter": "2018年9月组合5abcd",
+      "duration": "14.61分钟",
+      "durationMin": 14.61,
+      "durationSec": 876.5,
+      "done": false,
+      "planOrder": 174,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月组合5abcd.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 175,
+      "subject": "真题",
+      "episode": "176. 2018年9月组合5ef",
+      "chapter": "2018年9月组合5ef",
+      "duration": "6.41分钟",
+      "durationMin": 6.41,
+      "durationSec": 384.73,
+      "done": false,
+      "planOrder": 175,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月组合5ef.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 176,
+      "subject": "真题",
+      "episode": "177. 2018年9月组合6",
+      "chapter": "2018年9月组合6",
+      "duration": "10.95分钟",
+      "durationMin": 10.95,
+      "durationSec": 656.92,
+      "done": false,
+      "planOrder": 176,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月组合6.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 177,
+      "subject": "真题",
+      "episode": "178. 2018年9月衍生品2",
+      "chapter": "2018年9月衍生品2",
+      "duration": "5.18分钟",
+      "durationMin": 5.18,
+      "durationSec": 310.89,
+      "done": false,
+      "planOrder": 177,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月衍生品2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 178,
+      "subject": "真题",
+      "episode": "179. 2018年9月衍生品3a",
+      "chapter": "2018年9月衍生品3a",
+      "duration": "9.67分钟",
+      "durationMin": 9.67,
+      "durationSec": 580.33,
+      "done": false,
+      "planOrder": 178,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月衍生品3a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 179,
+      "subject": "真题",
+      "episode": "180. 2018年9月衍生品3b",
+      "chapter": "2018年9月衍生品3b",
+      "duration": "12.22分钟",
+      "durationMin": 12.22,
+      "durationSec": 732.93,
+      "done": false,
+      "planOrder": 179,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月衍生品3b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 180,
+      "subject": "真题",
+      "episode": "181. 2018年9月衍生品3c",
+      "chapter": "2018年9月衍生品3c",
+      "duration": "4.67分钟",
+      "durationMin": 4.67,
+      "durationSec": 280.34,
+      "done": false,
+      "planOrder": 180,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年9月衍生品3c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 9
+    },
+    {
+      "id": 181,
+      "subject": "真题",
+      "episode": "182. 2018年3月固收a",
+      "chapter": "2018年3月固收a",
+      "duration": "7.70分钟",
+      "durationMin": 7.7,
+      "durationSec": 462.0,
+      "done": false,
+      "planOrder": 181,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 182,
+      "subject": "真题",
+      "episode": "183. 2018年3月固收b",
+      "chapter": "2018年3月固收b",
+      "duration": "9.63分钟",
+      "durationMin": 9.63,
+      "durationSec": 577.81,
+      "done": false,
+      "planOrder": 182,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月固收b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 183,
+      "subject": "真题",
+      "episode": "184. 2018年3月固收c",
+      "chapter": "2018年3月固收c",
+      "duration": "10.67分钟",
+      "durationMin": 10.67,
+      "durationSec": 640.19,
+      "done": false,
+      "planOrder": 183,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月固收c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 184,
+      "subject": "真题",
+      "episode": "185. 2018年3月组合4ab",
+      "chapter": "2018年3月组合4ab",
+      "duration": "5.88分钟",
+      "durationMin": 5.88,
+      "durationSec": 352.7,
+      "done": false,
+      "planOrder": 184,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合4ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 185,
+      "subject": "真题",
+      "episode": "186. 2018年3月组合4d",
+      "chapter": "2018年3月组合4d",
+      "duration": "6.04分钟",
+      "durationMin": 6.04,
+      "durationSec": 362.2,
+      "done": false,
+      "planOrder": 185,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合4d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 186,
+      "subject": "真题",
+      "episode": "187. 2018年3月组合4e",
+      "chapter": "2018年3月组合4e",
+      "duration": "13.89分钟",
+      "durationMin": 13.89,
+      "durationSec": 833.2,
+      "done": false,
+      "planOrder": 186,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合4e.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 187,
+      "subject": "真题",
+      "episode": "188. 2018年3月组合abcde",
+      "chapter": "2018年3月组合abcde",
+      "duration": "16.83分钟",
+      "durationMin": 16.83,
+      "durationSec": 1009.56,
+      "done": false,
+      "planOrder": 187,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合abcde.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 188,
+      "subject": "真题",
+      "episode": "189. 2018年3月组合fgh",
+      "chapter": "2018年3月组合fgh",
+      "duration": "13.27分钟",
+      "durationMin": 13.27,
+      "durationSec": 796.44,
+      "done": false,
+      "planOrder": 188,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合fgh.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 189,
+      "subject": "真题",
+      "episode": "190. 2018年3月组合i",
+      "chapter": "2018年3月组合i",
+      "duration": "13.16分钟",
+      "durationMin": 13.16,
+      "durationSec": 789.85,
+      "done": false,
+      "planOrder": 189,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月组合i.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 190,
+      "subject": "真题",
+      "episode": "191. 2018年3月衍生品2",
+      "chapter": "2018年3月衍生品2",
+      "duration": "17.36分钟",
+      "durationMin": 17.36,
+      "durationSec": 1041.37,
+      "done": false,
+      "planOrder": 190,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月衍生品2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 191,
+      "subject": "真题",
+      "episode": "192. 2018年3月衍生品3ab",
+      "chapter": "2018年3月衍生品3ab",
+      "duration": "2.95分钟",
+      "durationMin": 2.95,
+      "durationSec": 176.83,
+      "done": false,
+      "planOrder": 191,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月衍生品3ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 192,
+      "subject": "真题",
+      "episode": "193. 2018年3月衍生品3cdefg",
+      "chapter": "2018年3月衍生品3cdefg",
+      "duration": "16.18分钟",
+      "durationMin": 16.18,
+      "durationSec": 970.94,
+      "done": false,
+      "planOrder": 192,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2018年3月衍生品3cdefg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2018,
+      "examMonth": 3
+    },
+    {
+      "id": 193,
+      "subject": "真题",
+      "episode": "194. 2017年9月固收1c",
+      "chapter": "2017年9月固收1c",
+      "duration": "9.22分钟",
+      "durationMin": 9.22,
+      "durationSec": 553.24,
+      "done": false,
+      "planOrder": 193,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月固收1c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 194,
+      "subject": "真题",
+      "episode": "195. 2017年9月固收ab",
+      "chapter": "2017年9月固收ab",
+      "duration": "14.36分钟",
+      "durationMin": 14.36,
+      "durationSec": 861.7,
+      "done": false,
+      "planOrder": 194,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月固收ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 195,
+      "subject": "真题",
+      "episode": "196. 2017年9月组合5",
+      "chapter": "2017年9月组合5",
+      "duration": "7.94分钟",
+      "durationMin": 7.94,
+      "durationSec": 476.33,
+      "done": false,
+      "planOrder": 195,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 196,
+      "subject": "真题",
+      "episode": "197. 2017年9月衍生品2a",
+      "chapter": "2017年9月衍生品2a",
+      "duration": "3.82分钟",
+      "durationMin": 3.82,
+      "durationSec": 228.99,
+      "done": false,
+      "planOrder": 196,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 197,
+      "subject": "真题",
+      "episode": "198. 2017年9月衍生品2bc",
+      "chapter": "2017年9月衍生品2bc",
+      "duration": "16.24分钟",
+      "durationMin": 16.24,
+      "durationSec": 974.55,
+      "done": false,
+      "planOrder": 197,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品2bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 198,
+      "subject": "真题",
+      "episode": "199. 2017年9月衍生品3a",
+      "chapter": "2017年9月衍生品3a",
+      "duration": "6.15分钟",
+      "durationMin": 6.15,
+      "durationSec": 368.85,
+      "done": false,
+      "planOrder": 198,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品3a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 199,
+      "subject": "真题",
+      "episode": "200. 2017年9月衍生品3bc",
+      "chapter": "2017年9月衍生品3bc",
+      "duration": "3.23分钟",
+      "durationMin": 3.23,
+      "durationSec": 194.05,
+      "done": false,
+      "planOrder": 199,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品3bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 200,
+      "subject": "真题",
+      "episode": "201. 2017年9月衍生品3d",
+      "chapter": "2017年9月衍生品3d",
+      "duration": "3.89分钟",
+      "durationMin": 3.89,
+      "durationSec": 233.64,
+      "done": false,
+      "planOrder": 200,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品3d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 201,
+      "subject": "真题",
+      "episode": "202. 2017年9月衍生品4a",
+      "chapter": "2017年9月衍生品4a",
+      "duration": "6.12分钟",
+      "durationMin": 6.12,
+      "durationSec": 366.98,
+      "done": false,
+      "planOrder": 201,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品4a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 202,
+      "subject": "真题",
+      "episode": "203. 2017年9月衍生品4b",
+      "chapter": "2017年9月衍生品4b",
+      "duration": "11.09分钟",
+      "durationMin": 11.09,
+      "durationSec": 665.66,
+      "done": false,
+      "planOrder": 202,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品4b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 203,
+      "subject": "真题",
+      "episode": "204. 2017年9月衍生品4cd",
+      "chapter": "2017年9月衍生品4cd",
+      "duration": "12.56分钟",
+      "durationMin": 12.56,
+      "durationSec": 753.62,
+      "done": false,
+      "planOrder": 203,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年9月衍生品4cd.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 9
+    },
+    {
+      "id": 204,
+      "subject": "真题",
+      "episode": "205. 2017年3月固收1a",
+      "chapter": "2017年3月固收1a",
+      "duration": "10.13分钟",
+      "durationMin": 10.13,
+      "durationSec": 607.77,
+      "done": false,
+      "planOrder": 204,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月固收1a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 205,
+      "subject": "真题",
+      "episode": "206. 2017年3月固收1bc",
+      "chapter": "2017年3月固收1bc",
+      "duration": "17.25分钟",
+      "durationMin": 17.25,
+      "durationSec": 1035.2,
+      "done": false,
+      "planOrder": 205,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月固收1bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 206,
+      "subject": "真题",
+      "episode": "207. 2017年3月组合5ab",
+      "chapter": "2017年3月组合5ab",
+      "duration": "9.88分钟",
+      "durationMin": 9.88,
+      "durationSec": 592.92,
+      "done": false,
+      "planOrder": 206,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月组合5ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 207,
+      "subject": "真题",
+      "episode": "208. 2017年3月组合5cde",
+      "chapter": "2017年3月组合5cde",
+      "duration": "14.63分钟",
+      "durationMin": 14.63,
+      "durationSec": 878.0,
+      "done": false,
+      "planOrder": 207,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月组合5cde.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 208,
+      "subject": "真题",
+      "episode": "209. 2017年3月衍生品3b",
+      "chapter": "2017年3月衍生品3b",
+      "duration": "3.37分钟",
+      "durationMin": 3.37,
+      "durationSec": 202.39,
+      "done": false,
+      "planOrder": 208,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品3b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 209,
+      "subject": "真题",
+      "episode": "210. 2017年3月衍生品3c12",
+      "chapter": "2017年3月衍生品3c12",
+      "duration": "8.58分钟",
+      "durationMin": 8.58,
+      "durationSec": 514.8,
+      "done": false,
+      "planOrder": 209,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品3c12.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 210,
+      "subject": "真题",
+      "episode": "211. 2017年3月衍生品3c3",
+      "chapter": "2017年3月衍生品3c3",
+      "duration": "9.15分钟",
+      "durationMin": 9.15,
+      "durationSec": 549.29,
+      "done": false,
+      "planOrder": 210,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品3c3.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 211,
+      "subject": "真题",
+      "episode": "212. 2017年3月衍生品3c4",
+      "chapter": "2017年3月衍生品3c4",
+      "duration": "6.54分钟",
+      "durationMin": 6.54,
+      "durationSec": 392.64,
+      "done": false,
+      "planOrder": 211,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品3c4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 212,
+      "subject": "真题",
+      "episode": "213. 2017年3月衍生品3c56",
+      "chapter": "2017年3月衍生品3c56",
+      "duration": "15.21分钟",
+      "durationMin": 15.21,
+      "durationSec": 912.58,
+      "done": false,
+      "planOrder": 212,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品3c56.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 213,
+      "subject": "真题",
+      "episode": "214. 2017年3月衍生品4ab",
+      "chapter": "2017年3月衍生品4ab",
+      "duration": "8.35分钟",
+      "durationMin": 8.35,
+      "durationSec": 500.82,
+      "done": false,
+      "planOrder": 213,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品4ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 214,
+      "subject": "真题",
+      "episode": "215. 2017年3月衍生品4c",
+      "chapter": "2017年3月衍生品4c",
+      "duration": "3.05分钟",
+      "durationMin": 3.05,
+      "durationSec": 183.15,
+      "done": false,
+      "planOrder": 214,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品4c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 215,
+      "subject": "真题",
+      "episode": "216. 2017年3月衍生品a",
+      "chapter": "2017年3月衍生品a",
+      "duration": "5.15分钟",
+      "durationMin": 5.15,
+      "durationSec": 308.72,
+      "done": false,
+      "planOrder": 215,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2017年3月衍生品a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2017,
+      "examMonth": 3
+    },
+    {
+      "id": 216,
+      "subject": "真题",
+      "episode": "217. 2016年9月固收1ab",
+      "chapter": "2016年9月固收1ab",
+      "duration": "6.63分钟",
+      "durationMin": 6.63,
+      "durationSec": 397.7,
+      "done": false,
+      "planOrder": 216,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月固收1ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 217,
+      "subject": "真题",
+      "episode": "218. 2016年9月固收1cdef",
+      "chapter": "2016年9月固收1cdef",
+      "duration": "7.94分钟",
+      "durationMin": 7.94,
+      "durationSec": 476.59,
+      "done": false,
+      "planOrder": 217,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月固收1cdef.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 218,
+      "subject": "真题",
+      "episode": "219. 2016年9月固收2a",
+      "chapter": "2016年9月固收2a",
+      "duration": "4.21分钟",
+      "durationMin": 4.21,
+      "durationSec": 252.89,
+      "done": false,
+      "planOrder": 218,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月固收2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 219,
+      "subject": "真题",
+      "episode": "220. 2016年9月固收2b",
+      "chapter": "2016年9月固收2b",
+      "duration": "8.10分钟",
+      "durationMin": 8.1,
+      "durationSec": 485.74,
+      "done": false,
+      "planOrder": 219,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月固收2b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 220,
+      "subject": "真题",
+      "episode": "221. 2016年9月组合4ab",
+      "chapter": "2016年9月组合4ab",
+      "duration": "25.76分钟",
+      "durationMin": 25.76,
+      "durationSec": 1545.41,
+      "done": false,
+      "planOrder": 220,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月组合4ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 221,
+      "subject": "真题",
+      "episode": "222. 2016年9月组合4cd",
+      "chapter": "2016年9月组合4cd",
+      "duration": "34.61分钟",
+      "durationMin": 34.61,
+      "durationSec": 2076.76,
+      "done": false,
+      "planOrder": 221,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月组合4cd.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 222,
+      "subject": "真题",
+      "episode": "223. 2016年9月衍生品3ab",
+      "chapter": "2016年9月衍生品3ab",
+      "duration": "8.73分钟",
+      "durationMin": 8.73,
+      "durationSec": 523.71,
+      "done": false,
+      "planOrder": 222,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月衍生品3ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 223,
+      "subject": "真题",
+      "episode": "224. 2016年9月衍生品3cde",
+      "chapter": "2016年9月衍生品3cde",
+      "duration": "13.25分钟",
+      "durationMin": 13.25,
+      "durationSec": 794.84,
+      "done": false,
+      "planOrder": 223,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月衍生品3cde.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 224,
+      "subject": "真题",
+      "episode": "225. 2016年9月衍生品3补充",
+      "chapter": "2016年9月衍生品3补充",
+      "duration": "3.17分钟",
+      "durationMin": 3.17,
+      "durationSec": 190.08,
+      "done": false,
+      "planOrder": 224,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月衍生品3补充.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 225,
+      "subject": "真题",
+      "episode": "226. 2016年9月衍生品5a",
+      "chapter": "2016年9月衍生品5a",
+      "duration": "12.60分钟",
+      "durationMin": 12.6,
+      "durationSec": 756.27,
+      "done": false,
+      "planOrder": 225,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月衍生品5a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 226,
+      "subject": "真题",
+      "episode": "227. 2016年9月衍生品5bc",
+      "chapter": "2016年9月衍生品5bc",
+      "duration": "17.67分钟",
+      "durationMin": 17.67,
+      "durationSec": 1060.25,
+      "done": false,
+      "planOrder": 226,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年9月衍生品5bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 9
+    },
+    {
+      "id": 227,
+      "subject": "真题",
+      "episode": "228. 2016年3月固收abc",
+      "chapter": "2016年3月固收abc",
+      "duration": "11.07分钟",
+      "durationMin": 11.07,
+      "durationSec": 664.17,
+      "done": false,
+      "planOrder": 227,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月固收abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 228,
+      "subject": "真题",
+      "episode": "229. 2016年3月固收de",
+      "chapter": "2016年3月固收de",
+      "duration": "22.91分钟",
+      "durationMin": 22.91,
+      "durationSec": 1374.47,
+      "done": false,
+      "planOrder": 228,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月固收de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 229,
+      "subject": "真题",
+      "episode": "230. 2016年3月组合4abc",
+      "chapter": "2016年3月组合4abc",
+      "duration": "7.89分钟",
+      "durationMin": 7.89,
+      "durationSec": 473.34,
+      "done": false,
+      "planOrder": 229,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月组合4abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 230,
+      "subject": "真题",
+      "episode": "231. 2016年3月组合5",
+      "chapter": "2016年3月组合5",
+      "duration": "4.87分钟",
+      "durationMin": 4.87,
+      "durationSec": 292.25,
+      "done": false,
+      "planOrder": 230,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 231,
+      "subject": "真题",
+      "episode": "232. 2016年3月组合de",
+      "chapter": "2016年3月组合de",
+      "duration": "7.09分钟",
+      "durationMin": 7.09,
+      "durationSec": 425.64,
+      "done": false,
+      "planOrder": 231,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月组合de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 232,
+      "subject": "真题",
+      "episode": "233. 2016年3月衍生品2a",
+      "chapter": "2016年3月衍生品2a",
+      "duration": "9.39分钟",
+      "durationMin": 9.39,
+      "durationSec": 563.44,
+      "done": false,
+      "planOrder": 232,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 233,
+      "subject": "真题",
+      "episode": "234. 2016年3月衍生品2bcd",
+      "chapter": "2016年3月衍生品2bcd",
+      "duration": "13.33分钟",
+      "durationMin": 13.33,
+      "durationSec": 799.98,
+      "done": false,
+      "planOrder": 233,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品2bcd.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 234,
+      "subject": "真题",
+      "episode": "235. 2016年3月衍生品2ef",
+      "chapter": "2016年3月衍生品2ef",
+      "duration": "7.38分钟",
+      "durationMin": 7.38,
+      "durationSec": 442.71,
+      "done": false,
+      "planOrder": 234,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品2ef.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 235,
+      "subject": "真题",
+      "episode": "236. 2016年3月衍生品3a",
+      "chapter": "2016年3月衍生品3a",
+      "duration": "4.42分钟",
+      "durationMin": 4.42,
+      "durationSec": 264.9,
+      "done": false,
+      "planOrder": 235,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品3a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 236,
+      "subject": "真题",
+      "episode": "237. 2016年3月衍生品3b",
+      "chapter": "2016年3月衍生品3b",
+      "duration": "8.68分钟",
+      "durationMin": 8.68,
+      "durationSec": 520.66,
+      "done": false,
+      "planOrder": 236,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品3b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 237,
+      "subject": "真题",
+      "episode": "238. 2016年3月衍生品3c",
+      "chapter": "2016年3月衍生品3c",
+      "duration": "4.08分钟",
+      "durationMin": 4.08,
+      "durationSec": 244.93,
+      "done": false,
+      "planOrder": 237,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2016年3月衍生品3c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2016,
+      "examMonth": 3
+    },
+    {
+      "id": 238,
+      "subject": "真题",
+      "episode": "239. 2015年9月固收a",
+      "chapter": "2015年9月固收a",
+      "duration": "16.29分钟",
+      "durationMin": 16.29,
+      "durationSec": 977.62,
+      "done": false,
+      "planOrder": 238,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 239,
+      "subject": "真题",
+      "episode": "240. 2015年9月固收b",
+      "chapter": "2015年9月固收b",
+      "duration": "35.76分钟",
+      "durationMin": 35.76,
+      "durationSec": 2145.45,
+      "done": false,
+      "planOrder": 239,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月固收b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 240,
+      "subject": "真题",
+      "episode": "241. 2015年9月固收c",
+      "chapter": "2015年9月固收c",
+      "duration": "3.98分钟",
+      "durationMin": 3.98,
+      "durationSec": 238.91,
+      "done": false,
+      "planOrder": 240,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月固收c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 241,
+      "subject": "真题",
+      "episode": "242. 2015年9月组合3ab",
+      "chapter": "2015年9月组合3ab",
+      "duration": "12.61分钟",
+      "durationMin": 12.61,
+      "durationSec": 756.46,
+      "done": false,
+      "planOrder": 241,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月组合3ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 242,
+      "subject": "真题",
+      "episode": "243. 2015年9月组合3cdef",
+      "chapter": "2015年9月组合3cdef",
+      "duration": "14.25分钟",
+      "durationMin": 14.25,
+      "durationSec": 855.1,
+      "done": false,
+      "planOrder": 242,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月组合3cdef.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 243,
+      "subject": "真题",
+      "episode": "244. 2015年9月组合4",
+      "chapter": "2015年9月组合4",
+      "duration": "13.46分钟",
+      "durationMin": 13.46,
+      "durationSec": 807.83,
+      "done": false,
+      "planOrder": 243,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月组合4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 244,
+      "subject": "真题",
+      "episode": "245. 2015年9月组合5",
+      "chapter": "2015年9月组合5",
+      "duration": "8.29分钟",
+      "durationMin": 8.29,
+      "durationSec": 497.47,
+      "done": false,
+      "planOrder": 244,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 245,
+      "subject": "真题",
+      "episode": "246. 2015年9月衍生品2abc",
+      "chapter": "2015年9月衍生品2abc",
+      "duration": "7.41分钟",
+      "durationMin": 7.41,
+      "durationSec": 444.33,
+      "done": false,
+      "planOrder": 245,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月衍生品2abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 246,
+      "subject": "真题",
+      "episode": "247. 2015年9月衍生品2de",
+      "chapter": "2015年9月衍生品2de",
+      "duration": "9.15分钟",
+      "durationMin": 9.15,
+      "durationSec": 549.01,
+      "done": false,
+      "planOrder": 246,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年9月衍生品2de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 9
+    },
+    {
+      "id": 247,
+      "subject": "真题",
+      "episode": "248. 2015年3月固收a",
+      "chapter": "2015年3月固收a",
+      "duration": "7.65分钟",
+      "durationMin": 7.65,
+      "durationSec": 459.2,
+      "done": false,
+      "planOrder": 247,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 248,
+      "subject": "真题",
+      "episode": "249. 2015年3月固收bc",
+      "chapter": "2015年3月固收bc",
+      "duration": "7.21分钟",
+      "durationMin": 7.21,
+      "durationSec": 432.38,
+      "done": false,
+      "planOrder": 248,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月固收bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 249,
+      "subject": "真题",
+      "episode": "250. 2015年3月固收d",
+      "chapter": "2015年3月固收d",
+      "duration": "17.18分钟",
+      "durationMin": 17.18,
+      "durationSec": 1030.51,
+      "done": false,
+      "planOrder": 249,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月固收d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 250,
+      "subject": "真题",
+      "episode": "251. 2015年3月固收e",
+      "chapter": "2015年3月固收e",
+      "duration": "4.93分钟",
+      "durationMin": 4.93,
+      "durationSec": 295.94,
+      "done": false,
+      "planOrder": 250,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月固收e.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 251,
+      "subject": "真题",
+      "episode": "252. 2015年3月组合3ab",
+      "chapter": "2015年3月组合3ab",
+      "duration": "12.87分钟",
+      "durationMin": 12.87,
+      "durationSec": 771.9,
+      "done": false,
+      "planOrder": 251,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合3ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 252,
+      "subject": "真题",
+      "episode": "253. 2015年3月组合3c",
+      "chapter": "2015年3月组合3c",
+      "duration": "9.10分钟",
+      "durationMin": 9.1,
+      "durationSec": 546.11,
+      "done": false,
+      "planOrder": 252,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合3c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 253,
+      "subject": "真题",
+      "episode": "254. 2015年3月组合3d",
+      "chapter": "2015年3月组合3d",
+      "duration": "4.12分钟",
+      "durationMin": 4.12,
+      "durationSec": 247.4,
+      "done": false,
+      "planOrder": 253,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合3d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 254,
+      "subject": "真题",
+      "episode": "255. 2015年3月组合4ab",
+      "chapter": "2015年3月组合4ab",
+      "duration": "4.24分钟",
+      "durationMin": 4.24,
+      "durationSec": 254.61,
+      "done": false,
+      "planOrder": 254,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合4ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 255,
+      "subject": "真题",
+      "episode": "256. 2015年3月组合4cd",
+      "chapter": "2015年3月组合4cd",
+      "duration": "8.30分钟",
+      "durationMin": 8.3,
+      "durationSec": 497.88,
+      "done": false,
+      "planOrder": 255,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合4cd.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 256,
+      "subject": "真题",
+      "episode": "257. 2015年3月组合4e",
+      "chapter": "2015年3月组合4e",
+      "duration": "7.82分钟",
+      "durationMin": 7.82,
+      "durationSec": 468.95,
+      "done": false,
+      "planOrder": 256,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月组合4e.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 257,
+      "subject": "真题",
+      "episode": "258. 2015年3月衍生品2a",
+      "chapter": "2015年3月衍生品2a",
+      "duration": "9.91分钟",
+      "durationMin": 9.91,
+      "durationSec": 594.84,
+      "done": false,
+      "planOrder": 257,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月衍生品2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 258,
+      "subject": "真题",
+      "episode": "259. 2015年3月衍生品2b",
+      "chapter": "2015年3月衍生品2b",
+      "duration": "6.08分钟",
+      "durationMin": 6.08,
+      "durationSec": 365.08,
+      "done": false,
+      "planOrder": 258,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月衍生品2b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 259,
+      "subject": "真题",
+      "episode": "260. 2015年3月衍生品2c",
+      "chapter": "2015年3月衍生品2c",
+      "duration": "13.24分钟",
+      "durationMin": 13.24,
+      "durationSec": 794.45,
+      "done": false,
+      "planOrder": 259,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月衍生品2c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 260,
+      "subject": "真题",
+      "episode": "261. 2015年3月衍生品2def",
+      "chapter": "2015年3月衍生品2def",
+      "duration": "11.74分钟",
+      "durationMin": 11.74,
+      "durationSec": 704.24,
+      "done": false,
+      "planOrder": 260,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2015年3月衍生品2def.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2015,
+      "examMonth": 3
+    },
+    {
+      "id": 261,
+      "subject": "真题",
+      "episode": "262. 2014年9月固收ab",
+      "chapter": "2014年9月固收ab",
+      "duration": "10.22分钟",
+      "durationMin": 10.22,
+      "durationSec": 613.01,
+      "done": false,
+      "planOrder": 261,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月固收ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 262,
+      "subject": "真题",
+      "episode": "263. 2014年9月固收c",
+      "chapter": "2014年9月固收c",
+      "duration": "11.31分钟",
+      "durationMin": 11.31,
+      "durationSec": 678.46,
+      "done": false,
+      "planOrder": 262,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月固收c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 263,
+      "subject": "真题",
+      "episode": "264. 2014年9月固收de",
+      "chapter": "2014年9月固收de",
+      "duration": "4.30分钟",
+      "durationMin": 4.3,
+      "durationSec": 257.71,
+      "done": false,
+      "planOrder": 263,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月固收de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 264,
+      "subject": "真题",
+      "episode": "265. 2014年9月固收fg",
+      "chapter": "2014年9月固收fg",
+      "duration": "12.90分钟",
+      "durationMin": 12.9,
+      "durationSec": 774.21,
+      "done": false,
+      "planOrder": 264,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月固收fg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 265,
+      "subject": "真题",
+      "episode": "266. 2014年9月衍生品ab",
+      "chapter": "2014年9月衍生品ab",
+      "duration": "6.67分钟",
+      "durationMin": 6.67,
+      "durationSec": 400.24,
+      "done": false,
+      "planOrder": 265,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 266,
+      "subject": "真题",
+      "episode": "267. 2014年9月衍生品c",
+      "chapter": "2014年9月衍生品c",
+      "duration": "10.03分钟",
+      "durationMin": 10.03,
+      "durationSec": 601.73,
+      "done": false,
+      "planOrder": 266,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 267,
+      "subject": "真题",
+      "episode": "268. 2014年9月衍生品d",
+      "chapter": "2014年9月衍生品d",
+      "duration": "2.23分钟",
+      "durationMin": 2.23,
+      "durationSec": 133.53,
+      "done": false,
+      "planOrder": 267,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 268,
+      "subject": "真题",
+      "episode": "269. 2014年9月衍生品e",
+      "chapter": "2014年9月衍生品e",
+      "duration": "10.84分钟",
+      "durationMin": 10.84,
+      "durationSec": 650.37,
+      "done": false,
+      "planOrder": 268,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品e.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 269,
+      "subject": "真题",
+      "episode": "270. 2014年9月衍生品fg",
+      "chapter": "2014年9月衍生品fg",
+      "duration": "7.25分钟",
+      "durationMin": 7.25,
+      "durationSec": 435.29,
+      "done": false,
+      "planOrder": 269,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品fg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 270,
+      "subject": "真题",
+      "episode": "271. 2014年9月衍生品hi",
+      "chapter": "2014年9月衍生品hi",
+      "duration": "4.09分钟",
+      "durationMin": 4.09,
+      "durationSec": 245.55,
+      "done": false,
+      "planOrder": 270,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年9月衍生品hi.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 9
+    },
+    {
+      "id": 271,
+      "subject": "真题",
+      "episode": "272. 2014年3月固收2a",
+      "chapter": "2014年3月固收2a",
+      "duration": "7.67分钟",
+      "durationMin": 7.67,
+      "durationSec": 460.27,
+      "done": false,
+      "planOrder": 271,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 272,
+      "subject": "真题",
+      "episode": "273. 2014年3月固收2b",
+      "chapter": "2014年3月固收2b",
+      "duration": "4.84分钟",
+      "durationMin": 4.84,
+      "durationSec": 290.16,
+      "done": false,
+      "planOrder": 272,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收2b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 273,
+      "subject": "真题",
+      "episode": "274. 2014年3月固收2c",
+      "chapter": "2014年3月固收2c",
+      "duration": "6.30分钟",
+      "durationMin": 6.3,
+      "durationSec": 378.24,
+      "done": false,
+      "planOrder": 273,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收2c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 274,
+      "subject": "真题",
+      "episode": "275. 2014年3月固收a",
+      "chapter": "2014年3月固收a",
+      "duration": "4.27分钟",
+      "durationMin": 4.27,
+      "durationSec": 255.96,
+      "done": false,
+      "planOrder": 274,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 275,
+      "subject": "真题",
+      "episode": "276. 2014年3月固收b",
+      "chapter": "2014年3月固收b",
+      "duration": "6.08分钟",
+      "durationMin": 6.08,
+      "durationSec": 364.72,
+      "done": false,
+      "planOrder": 275,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 276,
+      "subject": "真题",
+      "episode": "277. 2014年3月固收c",
+      "chapter": "2014年3月固收c",
+      "duration": "3.16分钟",
+      "durationMin": 3.16,
+      "durationSec": 189.31,
+      "done": false,
+      "planOrder": 276,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月固收c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 277,
+      "subject": "真题",
+      "episode": "278. 2014年3月组合4a",
+      "chapter": "2014年3月组合4a",
+      "duration": "4.78分钟",
+      "durationMin": 4.78,
+      "durationSec": 286.78,
+      "done": false,
+      "planOrder": 277,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合4a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 278,
+      "subject": "真题",
+      "episode": "279. 2014年3月组合4bc",
+      "chapter": "2014年3月组合4bc",
+      "duration": "3.88分钟",
+      "durationMin": 3.88,
+      "durationSec": 232.66,
+      "done": false,
+      "planOrder": 278,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合4bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 279,
+      "subject": "真题",
+      "episode": "280. 2014年3月组合4d",
+      "chapter": "2014年3月组合4d",
+      "duration": "4.40分钟",
+      "durationMin": 4.4,
+      "durationSec": 264.02,
+      "done": false,
+      "planOrder": 279,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合4d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 280,
+      "subject": "真题",
+      "episode": "281. 2014年3月组合4e",
+      "chapter": "2014年3月组合4e",
+      "duration": "9.46分钟",
+      "durationMin": 9.46,
+      "durationSec": 567.9,
+      "done": false,
+      "planOrder": 280,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合4e.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 281,
+      "subject": "真题",
+      "episode": "282. 2014年3月组合4f",
+      "chapter": "2014年3月组合4f",
+      "duration": "6.60分钟",
+      "durationMin": 6.6,
+      "durationSec": 396.29,
+      "done": false,
+      "planOrder": 281,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合4f.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 282,
+      "subject": "真题",
+      "episode": "283. 2014年3月组合5a",
+      "chapter": "2014年3月组合5a",
+      "duration": "8.65分钟",
+      "durationMin": 8.65,
+      "durationSec": 518.85,
+      "done": false,
+      "planOrder": 282,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合5a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 283,
+      "subject": "真题",
+      "episode": "284. 2014年3月组合5b",
+      "chapter": "2014年3月组合5b",
+      "duration": "2.50分钟",
+      "durationMin": 2.5,
+      "durationSec": 149.93,
+      "done": false,
+      "planOrder": 283,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合5b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 284,
+      "subject": "真题",
+      "episode": "285. 2014年3月组合5c",
+      "chapter": "2014年3月组合5c",
+      "duration": "4.06分钟",
+      "durationMin": 4.06,
+      "durationSec": 243.58,
+      "done": false,
+      "planOrder": 284,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合5c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 285,
+      "subject": "真题",
+      "episode": "286. 2014年3月组合5d",
+      "chapter": "2014年3月组合5d",
+      "duration": "4.88分钟",
+      "durationMin": 4.88,
+      "durationSec": 292.8,
+      "done": false,
+      "planOrder": 285,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合5d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 286,
+      "subject": "真题",
+      "episode": "287. 2014年3月组合5f",
+      "chapter": "2014年3月组合5f",
+      "duration": "2.74分钟",
+      "durationMin": 2.74,
+      "durationSec": 164.29,
+      "done": false,
+      "planOrder": 286,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月组合5f.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 287,
+      "subject": "真题",
+      "episode": "288. 2014年3月衍生品3ab",
+      "chapter": "2014年3月衍生品3ab",
+      "duration": "6.16分钟",
+      "durationMin": 6.16,
+      "durationSec": 369.64,
+      "done": false,
+      "planOrder": 287,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月衍生品3ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 288,
+      "subject": "真题",
+      "episode": "289. 2014年3月衍生品3cdef1",
+      "chapter": "2014年3月衍生品3cdef1",
+      "duration": "4.53分钟",
+      "durationMin": 4.53,
+      "durationSec": 271.97,
+      "done": false,
+      "planOrder": 288,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月衍生品3cdef1.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 289,
+      "subject": "真题",
+      "episode": "290. 2014年3月衍生品3cdef2",
+      "chapter": "2014年3月衍生品3cdef2",
+      "duration": "18.24分钟",
+      "durationMin": 18.24,
+      "durationSec": 1094.64,
+      "done": false,
+      "planOrder": 289,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2014年3月衍生品3cdef2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2014,
+      "examMonth": 3
+    },
+    {
+      "id": 290,
+      "subject": "真题",
+      "episode": "291. 2013年9月固收1a",
+      "chapter": "2013年9月固收1a",
+      "duration": "9.05分钟",
+      "durationMin": 9.05,
+      "durationSec": 542.72,
+      "done": false,
+      "planOrder": 290,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收1a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 291,
+      "subject": "真题",
+      "episode": "292. 2013年9月固收1b",
+      "chapter": "2013年9月固收1b",
+      "duration": "8.39分钟",
+      "durationMin": 8.39,
+      "durationSec": 503.51,
+      "done": false,
+      "planOrder": 291,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收1b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 292,
+      "subject": "真题",
+      "episode": "293. 2013年9月固收1c",
+      "chapter": "2013年9月固收1c",
+      "duration": "9.81分钟",
+      "durationMin": 9.81,
+      "durationSec": 588.33,
+      "done": false,
+      "planOrder": 292,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收1c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 293,
+      "subject": "真题",
+      "episode": "294. 2013年9月固收2a",
+      "chapter": "2013年9月固收2a",
+      "duration": "8.15分钟",
+      "durationMin": 8.15,
+      "durationSec": 489.05,
+      "done": false,
+      "planOrder": 293,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 294,
+      "subject": "真题",
+      "episode": "295. 2013年9月固收2b123",
+      "chapter": "2013年9月固收2b123",
+      "duration": "9.94分钟",
+      "durationMin": 9.94,
+      "durationSec": 596.1,
+      "done": false,
+      "planOrder": 294,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收2b123.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 295,
+      "subject": "真题",
+      "episode": "296. 2013年9月固收2b45",
+      "chapter": "2013年9月固收2b45",
+      "duration": "5.19分钟",
+      "durationMin": 5.19,
+      "durationSec": 311.38,
+      "done": false,
+      "planOrder": 295,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收2b45.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 296,
+      "subject": "真题",
+      "episode": "297. 2013年9月固收2c",
+      "chapter": "2013年9月固收2c",
+      "duration": "4.73分钟",
+      "durationMin": 4.73,
+      "durationSec": 283.9,
+      "done": false,
+      "planOrder": 296,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月固收2c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 297,
+      "subject": "真题",
+      "episode": "298. 2013年9月组合4ab",
+      "chapter": "2013年9月组合4ab",
+      "duration": "5.33分钟",
+      "durationMin": 5.33,
+      "durationSec": 319.57,
+      "done": false,
+      "planOrder": 297,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月组合4ab.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 298,
+      "subject": "真题",
+      "episode": "299. 2013年9月组合5",
+      "chapter": "2013年9月组合5",
+      "duration": "12.20分钟",
+      "durationMin": 12.2,
+      "durationSec": 731.76,
+      "done": false,
+      "planOrder": 298,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月组合5.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 299,
+      "subject": "真题",
+      "episode": "300. 2013年9月衍生品3a",
+      "chapter": "2013年9月衍生品3a",
+      "duration": "11.26分钟",
+      "durationMin": 11.26,
+      "durationSec": 675.48,
+      "done": false,
+      "planOrder": 299,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月衍生品3a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 300,
+      "subject": "真题",
+      "episode": "301. 2013年9月衍生品3b",
+      "chapter": "2013年9月衍生品3b",
+      "duration": "4.23分钟",
+      "durationMin": 4.23,
+      "durationSec": 254.0,
+      "done": false,
+      "planOrder": 300,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月衍生品3b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 301,
+      "subject": "真题",
+      "episode": "302. 2013年9月衍生品3c",
+      "chapter": "2013年9月衍生品3c",
+      "duration": "11.10分钟",
+      "durationMin": 11.1,
+      "durationSec": 666.0,
+      "done": false,
+      "planOrder": 301,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月衍生品3c.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 302,
+      "subject": "真题",
+      "episode": "303. 2013年9月衍生品3d",
+      "chapter": "2013年9月衍生品3d",
+      "duration": "7.36分钟",
+      "durationMin": 7.36,
+      "durationSec": 441.86,
+      "done": false,
+      "planOrder": 302,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年9月衍生品3d.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 9
+    },
+    {
+      "id": 303,
+      "subject": "真题",
+      "episode": "304. 2013年3月固收1a",
+      "chapter": "2013年3月固收1a",
+      "duration": "35.19分钟",
+      "durationMin": 35.19,
+      "durationSec": 2111.3,
+      "done": false,
+      "planOrder": 303,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收1a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 304,
+      "subject": "真题",
+      "episode": "305. 2013年3月固收1b",
+      "chapter": "2013年3月固收1b",
+      "duration": "35.06分钟",
+      "durationMin": 35.06,
+      "durationSec": 2103.62,
+      "done": false,
+      "planOrder": 304,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收1b.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 305,
+      "subject": "真题",
+      "episode": "306. 2013年3月固收1c1",
+      "chapter": "2013年3月固收1c1",
+      "duration": "4.42分钟",
+      "durationMin": 4.42,
+      "durationSec": 264.97,
+      "done": false,
+      "planOrder": 305,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收1c1.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 306,
+      "subject": "真题",
+      "episode": "307. 2013年3月固收1c2",
+      "chapter": "2013年3月固收1c2",
+      "duration": "7.55分钟",
+      "durationMin": 7.55,
+      "durationSec": 453.06,
+      "done": false,
+      "planOrder": 306,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收1c2.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 307,
+      "subject": "真题",
+      "episode": "308. 2013年3月固收2a",
+      "chapter": "2013年3月固收2a",
+      "duration": "14.91分钟",
+      "durationMin": 14.91,
+      "durationSec": 894.59,
+      "done": false,
+      "planOrder": 307,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收2a.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 308,
+      "subject": "真题",
+      "episode": "309. 2013年3月固收2bc",
+      "chapter": "2013年3月固收2bc",
+      "duration": "16.12分钟",
+      "durationMin": 16.12,
+      "durationSec": 967.04,
+      "done": false,
+      "planOrder": 308,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月固收2bc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 309,
+      "subject": "真题",
+      "episode": "310. 2013年3月投资组合4",
+      "chapter": "2013年3月投资组合4",
+      "duration": "18.21分钟",
+      "durationMin": 18.21,
+      "durationSec": 1092.47,
+      "done": false,
+      "planOrder": 309,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月投资组合4.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 310,
+      "subject": "真题",
+      "episode": "311. 2013年3月投资组合5abc",
+      "chapter": "2013年3月投资组合5abc",
+      "duration": "13.33分钟",
+      "durationMin": 13.33,
+      "durationSec": 799.6,
+      "done": false,
+      "planOrder": 310,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月投资组合5abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 311,
+      "subject": "真题",
+      "episode": "312. 2013年3月投资组合5de",
+      "chapter": "2013年3月投资组合5de",
+      "duration": "17.49分钟",
+      "durationMin": 17.49,
+      "durationSec": 1049.43,
+      "done": false,
+      "planOrder": 311,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月投资组合5de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 312,
+      "subject": "真题",
+      "episode": "313. 2013年3月衍生品abc",
+      "chapter": "2013年3月衍生品abc",
+      "duration": "24.26分钟",
+      "durationMin": 24.26,
+      "durationSec": 1455.43,
+      "done": false,
+      "planOrder": 312,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月衍生品abc.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 313,
+      "subject": "真题",
+      "episode": "314. 2013年3月衍生品de",
+      "chapter": "2013年3月衍生品de",
+      "duration": "15.13分钟",
+      "durationMin": 15.13,
+      "durationSec": 907.87,
+      "done": false,
+      "planOrder": 313,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月衍生品de.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    },
+    {
+      "id": 314,
+      "subject": "真题",
+      "episode": "315. 2013年3月衍生品fg",
+      "chapter": "2013年3月衍生品fg",
+      "duration": "10.44分钟",
+      "durationMin": 10.44,
+      "durationSec": 626.39,
+      "done": false,
+      "planOrder": 314,
+      "path": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题/2013年3月衍生品fg.ev4a",
+      "sourceKind": "ev4a",
+      "examYear": 2013,
+      "examMonth": 3
+    }
+  ],
+  "source": {
+    "durationCache": "/Users/apple/Desktop/CIIA/outputs/video-file-index/ev4a_durations.json",
+    "videoIndex": "/Users/apple/Desktop/CIIA/outputs/video-file-index/视频文件清单.xlsx",
+    "courseRoot": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二",
+    "examRoot": "/Users/apple/Desktop/CIIA/视频课程/苹果版/卷二真题",
+    "extraExamRoot": "/Users/apple/Desktop/CIIA/视频课程/2025年9月更新",
+    "generatedAt": "2026-08-20T17:07:28+08:00"
+  }
+};
 const STORAGE_KEY = 'ciia_juan2_progress_v1';
 let videos = DATA_CIIA_JUAN2.videos.map((v, index) => ({ ...v, id: index, done: false }));
 let subjectMap = Object.fromEntries(DATA_CIIA_JUAN2.subjects.map(s => [s.name, s]));
@@ -721,6 +5712,14 @@ function formatMinutes(minutes) {
 
 function formatHours(minutes) {
   return `${Math.round((minutes || 0) / 60 * 10) / 10}小时`;
+}
+
+function sortPlanVideos(rows) {
+  return [...rows].sort((a, b) => (a.planOrder ?? a.id) - (b.planOrder ?? b.id));
+}
+
+function sumDuration(rows) {
+  return rows.reduce((sum, v) => sum + v.durationMin, 0);
 }
 
 function getDaysToExam() {
@@ -814,7 +5813,7 @@ function renderProgress() {
           <div class="subject-pct">${pct}%</div>
         </div>
         <div class="subject-stats">
-          <span>章节 <strong>${s.done}/${s.total}</strong></span>
+          <span>视频 <strong>${s.done}/${s.total}</strong></span>
           <span>时长 <strong>${formatHours(s.doneMin)}/${formatHours(s.totalMin)}</strong></span>
           <span>剩余 <strong>${formatMinutes(s.totalMin - s.doneMin)}</strong></span>
         </div>
@@ -856,9 +5855,9 @@ function renderStats() {
   const activeAvg = activeDates.size ? totals.doneMin / activeDates.size : 0;
   const longest = [...videos].sort((a, b) => b.durationMin - a.durationMin)[0];
   document.getElementById('statsMetrics').innerHTML = [
-    ['今日学习', formatMinutes(todayMin), todayMin ? '来自今天勾选完成的章节' : '今天还没有新增完成记录'],
+    ['今日学习', formatMinutes(todayMin), todayMin ? '来自今天勾选完成的视频' : '今天还没有新增完成记录'],
     ['有效日均', formatMinutes(activeAvg), `${activeDates.size} 个有完成记录的日期`],
-    ['最长章节', formatMinutes(longest.durationMin), longest.chapter],
+    ['最长视频', formatMinutes(longest.durationMin), longest.chapter],
     ['完成占比', `${Math.round(totals.doneMin / totals.totalMin * 100)}%`, `${formatHours(totals.doneMin)} / ${formatHours(totals.totalMin)}`]
   ].map(([label, value, sub]) => `
     <div class="metric-card">
@@ -876,7 +5875,7 @@ function renderStats() {
       <div class="rank-row">
         <div class="rank-head">
           <span class="rank-name">${escapeHtml(s.short)}</span>
-          <span class="rank-value">${s.total} 章 · ${formatHours(s.totalMin)}</span>
+          <span class="rank-value">${s.total} 个视频 · ${formatHours(s.totalMin)}</span>
         </div>
         <div class="rank-track"><div class="rank-fill" style="width:${Math.round(s.totalMin / maxMin * 100)}%"></div></div>
       </div>
@@ -905,13 +5904,19 @@ function renderPlan() {
   const totals = getTotals();
   const daysAtTwoHours = totals.remainingMin <= 0 ? 0 : Math.ceil(totals.remainingMin / DATA_CIIA_JUAN2.dailyFallbackMinutes * 10) / 10;
   const bufferDays = Math.max(0, totals.days - Math.ceil(daysAtTwoHours));
+  const orderedTodo = sortPlanVideos(videos.filter(v => !v.done));
+  const courseTodo = orderedTodo.filter(v => v.subject !== '真题');
+  const examTodo = orderedTodo.filter(v => v.subject === '真题');
+  const courseMin = sumDuration(courseTodo);
+  const examMin = sumDuration(examTodo);
   document.getElementById('planGrid').innerHTML = [
     ['剩余自然日', `${totals.days}天`, '按浏览器当前日期计算，到 2026年9月19日。'],
     ['预计日均', formatMinutes(totals.expectedDaily), '剩余未完成时长除以考试前剩余自然日。'],
     ['推荐日均', formatMinutes(totals.recommendedDaily), '预计日均上浮 25%，且未完成时不低于 60 分钟。'],
-    ['剩余视频', formatHours(totals.remainingMin), `${videos.filter(v => !v.done).length} 个章节尚未完成。`],
+    ['课程阶段', formatHours(courseMin), courseTodo.length ? `${courseTodo.length} 个课程视频先完成，下一条：${courseTodo[0].chapter}。` : '课程视频已完成。'],
+    ['真题阶段', formatHours(examMin), examTodo.length ? `${examTodo.length} 个真题视频随后完成，下一条：${examTodo[0].chapter}。` : '真题视频已完成。'],
     ['2小时/天口径', `${daysAtTwoHours}天`, `按每天 2 小时清账，预计可留出约 ${bufferDays} 天复盘缓冲。`],
-    ['总视频量', formatHours(totals.totalMin), '表格合计 3252 分钟，约 54.2 小时。']
+    ['总视频量', formatHours(totals.totalMin), `${totals.total} 个 .ev4a/.mp4 视频，课程先行、真题随后。`]
   ].map(([label, value, body]) => `
     <div class="metric-card">
       <div class="metric-label">${escapeHtml(label)}</div>
@@ -920,16 +5925,9 @@ function renderPlan() {
     </div>
   `).join('');
 
-  const remainingByCourse = getSubjectStats().map(s => ({
-    course: s.short,
-    remain: s.totalMin - s.doneMin,
-    left: s.total - s.done
-  })).filter(s => s.remain > 0);
-  const first = remainingByCourse[0];
-  const heaviest = [...remainingByCourse].sort((a, b) => b.remain - a.remain)[0];
   document.getElementById('timeline').innerHTML = [
-    ['先清当前模块', first ? `${first.course} 还剩 ${first.left} 章，优先保持连续性。` : '全部视频已完成，进入复盘。'],
-    ['控制真题密度', heaviest ? `${heaviest.course} 余量最高，可拆成多天穿插完成。` : '真题视频已清账。'],
+    ['阶段一：课程视频', courseTodo.length ? `按固收 -> 衍生品 -> 组合推进，先看 ${courseTodo[0].chapter}。` : '课程视频已完成，进入真题阶段。'],
+    ['阶段二：真题视频', examTodo.length ? `从 ${examTodo[0].chapter} 开始，按时间由新到旧推进。` : '真题视频已清账。'],
     ['考前缓冲', `用推荐日均 ${formatMinutes(totals.recommendedDaily)} 推进，避免把视频清账压到考前。`]
   ].map(([title, body]) => `
     <div class="timeline-step">
@@ -966,12 +5964,12 @@ function renderVideoItem(video, showSubject) {
 
 function renderTodo() {
   document.getElementById('todoFilters').innerHTML = buildFilters(todoFilter, 'todo');
-  const rows = videos.filter(v => !v.done && (todoFilter === 'all' || v.subject === todoFilter));
+  const rows = sortPlanVideos(videos.filter(v => !v.done && (todoFilter === 'all' || v.subject === todoFilter)));
   const totalMin = rows.reduce((sum, v) => sum + v.durationMin, 0);
-  document.getElementById('todoNote').textContent = `${rows.length} 章 · ${formatMinutes(totalMin)}`;
+  document.getElementById('todoNote').textContent = `${rows.length} 个视频 · ${formatMinutes(totalMin)}`;
   document.getElementById('todoList').innerHTML = rows.length
     ? rows.map(v => renderVideoItem(v, true)).join('')
-    : '<div class="empty">没有待看章节了。</div>';
+    : '<div class="empty">没有待看视频了。</div>';
 }
 
 function setTodoFilter(key) {
@@ -982,15 +5980,15 @@ function setTodoFilter(key) {
 function renderAll() {
   document.getElementById('allFilters').innerHTML = buildFilters(allFilter, 'all');
   const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
-  const rows = videos.filter(v => {
+  const rows = sortPlanVideos(videos.filter(v => {
     const matchCourse = allFilter === 'all' || v.subject === allFilter;
-    const haystack = `${v.subject} ${v.episode} ${v.chapter}`.toLowerCase();
+    const haystack = `${v.subject} ${v.episode} ${v.chapter} ${v.path || ''}`.toLowerCase();
     return matchCourse && (!query || haystack.includes(query));
-  });
-  document.getElementById('allNote').textContent = `${rows.length} / ${videos.length} 章`;
+  }));
+  document.getElementById('allNote').textContent = `${rows.length} / ${videos.length} 个视频`;
   document.getElementById('allList').innerHTML = rows.length
     ? rows.map(v => renderVideoItem(v, allFilter === 'all')).join('')
-    : '<div class="empty">没有找到匹配章节。</div>';
+    : '<div class="empty">没有找到匹配视频。</div>';
 }
 
 function setAllFilter(key) {
